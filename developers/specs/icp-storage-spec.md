@@ -2,13 +2,13 @@
 
 ## 概要
 
-Internet Computer（ICP）は zERC20 のステルスメッセージングレイヤーを提供します。2 つのキャニスタが、送信者と受信者の関係をオンチェーンで明かすことなく、暗号化された通信を処理します。
+Internet Computer（ICP）は zERC20 のステルスメッセージングレイヤーを提供します。2 つのcanister（キャニスター: IPC上でのスマートコントラクト）が、送信者と受信者の関係をオンチェーンで明かすことなく、暗号化された通信を処理します。
 
 **ファイル**: `zstorage/`
 
 ## コンポーネント
 
-### Key Manager キャニスタ
+### Key Manager キャニスター
 
 **ファイル**: `zstorage/backend/key_manager/`
 
@@ -19,7 +19,7 @@ VetKD（Verifiable Encrypted Threshold Key Derivation）を用いてアイデン
 - 鍵リクエストに Nonce と TTL を強制
 - 受信者が EVM 署名で認証して閲覧鍵（View Key）を取得
 
-### Storage キャニスタ
+### Storage キャニスター
 
 **ファイル**: `zstorage/backend/storage/`
 
@@ -176,6 +176,6 @@ let announcements = client.scan_announcements(my_address, page).await?;
 ## セキュリティに関する考慮事項
 
 - **Key Manager の信頼**：ICP サブネットがマスター鍵を分散保有するため、単一ノードによる復号は不可能
-- **Storage のプライバシー**：キャニスタは暗号化データのみ保存し、内容を読むことはできない
+- **Storage のプライバシー**：キャニスターは暗号化データのみ保存し、内容を読むことはできない
 - **認証**：鍵リクエストには EVM 署名が必要
 - **Nonce / TTL**：鍵導出リクエストへのリプレイ攻撃を防止

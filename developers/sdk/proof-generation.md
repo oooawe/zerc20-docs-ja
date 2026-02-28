@@ -11,7 +11,7 @@
 
 ## Single Proof
 
-単一の受け取り可能な転送を Redeem する際に使用します。
+単一の受け取り可能なトランスファーを Redeem する際に使用します。
 
 ```typescript
 const sdk = createSdk();
