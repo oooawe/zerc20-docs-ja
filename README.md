@@ -1,13 +1,35 @@
+---
+icon: transporter
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: false
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+  tags:
+    visible: true
+metaLinks:
+  canonical: /broken/pages/78JaEVdLGguCHh6Bty5f
+---
+
 # はじめに
 
 **zERC20** は、ERC-20に完全準拠したクロスチェーン対応のプライベート転送（Private Transfer）トークンです。MetaMask などの標準的なウォレットから直接プライベート転送を実行でき、特別なソフトウェアは不要です。第三者から見ると、プライベート転送は通常の転送と区別がつきません。
 
 ## 主な特徴
 
-- **ERC-20互換**：ERC-20をサポートするあらゆるウォレット、DEX、DeFiプロトコルで利用できます
-- **プライベート転送**：送信者と受信者のアドレス間の紐付けを隠したまま、トークンを送れます
-- **クロスチェーン対応**：LayerZero を通じて、複数のブロックチェーン間でプライベートに転送できます
-- **特別なウォレット不要**：MetaMask や標準的なEthereumウォレットをそのまま使えます
+* **ERC-20互換**：ERC-20をサポートするあらゆるウォレット、DEX、DeFiプロトコルで利用できます
+* **プライベート転送**：送信者と受信者のアドレス間の紐付けを隠したまま、トークンを送れます
+* **クロスチェーン対応**：LayerZero を通じて、複数のブロックチェーン間でプライベートに転送できます
+* **特別なウォレット不要**：MetaMask や標準的なEthereumウォレットをそのまま使えます
 
 ## プライベート転送の流れ
 
@@ -20,11 +42,11 @@
 
 zERC20 は原資産トークン（USDC、ETH、BNB など）に1:1でバックされたラッパートークン（Wrapper Token）です。以下の方法で入手できます：
 
-- **デポジット**：[フロントエンド](https://app.zerc20.io/) または CLI から原資産トークンを預け入れる
-- **購入**：Uniswap などの分散型取引所で購入する
+* **デポジット**：[フロントエンド](https://app.zerc20.io/) または CLI から原資産トークンを預け入れる
+* **購入**：Uniswap などの分散型取引所で購入する
 
 ## 次のステップ
 
-- [zERC20 の仕組み](overview/how-it-works.md) — 技術的な詳細を理解する
-- [フロントエンドを使う](users/frontend/getting-started.md) — ウェブアプリで始める
-- [CLI を使う](users/cli/getting-started.md) — コマンドラインで始める
+* [zERC20 の仕組み](overview/how-it-works.md) — 技術的な詳細を理解する
+* [フロントエンドを使う](users/frontend/getting-started.md) — ウェブアプリで始める
+* [CLI を使う](users/cli/getting-started.md) — コマンドラインで始める

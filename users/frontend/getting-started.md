@@ -1,4 +1,4 @@
-# フロントエンドを使いはじめる
+# フロントエンドを使う
 
 このガイドでは、zERC20 ウェブアプリの基本的な使い方を説明します。
 
@@ -8,7 +8,7 @@
 
 > **💡 Hint：** テストトークンで試したい場合は、[Testnet フロントエンド](https://v2.testnet.app.zerc20.io/) を使用してください。
 
-<figure><img src="../../assets/frontend/dashboard-overview.png" alt="Dashboard Overview" width="560"><figcaption>ダッシュボード概要</figcaption></figure>
+<figure><img src="../../.gitbook/assets/dashboard-overview.png" alt="Dashboard Overview" width="560"><figcaption><p>ダッシュボード概要</p></figcaption></figure>
 
 ## ステップ2：ウォレットを接続する
 
@@ -24,9 +24,9 @@ zERC20 トークンは、原資産トークンに1:1でバックされた ERC-20
 
 ページ上部のドロップダウンでトークンの種類とチェーンを選択できます：
 
-| トークン選択 | チェーン選択 |
-|:--------------:|:--------------:|
-| <img src="../../assets/frontend/token-selector.png" alt="Token Selector" width="200"> | <img src="../../assets/frontend/chain-selector.png" alt="Chain Selector" width="200"> |
+|                            トークン選択                           |                            チェーン選択                           |
+| :---------------------------------------------------------: | :---------------------------------------------------------: |
+| ![Token Selector](../../.gitbook/assets/token-selector.png) | ![Chain Selector](../../.gitbook/assets/chain-selector.png) |
 
 ### 方法A：トークンをWrapする
 
@@ -37,7 +37,7 @@ Wrap とは、標準トークン（USDC、ETH など）を zERC20 トークン�
 3. Wrap するトークンを選択（USDC、ETH、BNB など）
 4. 金額を入力
 
-<figure><img src="../../assets/frontend/wrap-modal-input.png" alt="Wrap Modal with Amount" width="480"><figcaption>Wrap モーダル — 変換する金額を入力</figcaption></figure>
+<figure><img src="../../.gitbook/assets/wrap-modal-input.png" alt="Wrap Modal with Amount" width="480"><figcaption><p>Wrap モーダル — 変換する金額を入力</p></figcaption></figure>
 
 5. 「Wrap USDC to zUSDC」（または対応するトークン）をクリック
 6. ウォレットでトランザクションを承認
@@ -47,7 +47,7 @@ Wrap とは、標準トークン（USDC、ETH など）を zERC20 トークン�
 
 Wrap 完了後、残高が更新されます：
 
-<figure><img src="../../assets/frontend/dashboard-after-wrap.png" alt="Dashboard After Wrap" width="560"><figcaption>更新された zERC20 残高を表示するダッシュボード</figcaption></figure>
+<figure><img src="../../.gitbook/assets/dashboard-after-wrap.png" alt="Dashboard After Wrap" width="560"><figcaption><p>更新された zERC20 残高を表示するダッシュボード</p></figcaption></figure>
 
 ### 方法B：DEXで購入する
 
@@ -69,7 +69,7 @@ zERC20 トークンを原資産トークンに戻す手順：
 
 「Chain (Current)」を選択すると、現在のチェーンで原資産トークンを受け取れます。
 
-<figure><img src="../../assets/frontend/unwrap-same-chain.png" alt="Unwrap Same Chain" width="480"><figcaption>現在のチェーンへUnwrap</figcaption></figure>
+<figure><img src="../../.gitbook/assets/unwrap-same-chain.png" alt="Unwrap Same Chain" width="480"><figcaption><p>現在のチェーンへUnwrap</p></figcaption></figure>
 
 **クロスチェーンUnwrap：**
 
@@ -81,7 +81,7 @@ zERC20 トークンを原資産トークンに戻す手順：
 
 例えば Arbitrum にいる場合に「Base」を選択すると、フローは **Arbitrum → Base → Arbitrum** となります。Unwrap は Base で行われますが、原資産トークンは Arbitrum で受け取れます。
 
-<figure><img src="../../assets/frontend/unwrap-cross-chain.png" alt="Unwrap Cross Chain" width="480"><figcaption>別のネットワークの流動性を使ったクロスチェーンUnwrap</figcaption></figure>
+<figure><img src="../../.gitbook/assets/unwrap-cross-chain.png" alt="Unwrap Cross Chain" width="480"><figcaption><p>別のネットワークの流動性を使ったクロスチェーンUnwrap</p></figcaption></figure>
 
 トランザクション確認前に手数料の内訳（Unwrap手数料・ブリッジ手数料・LayerZero手数料）が表示されます。
 
@@ -95,11 +95,11 @@ zERC20 トークンを原資産トークンに戻す手順：
 
 ## 重要な注意事項
 
-- **クロスチェーン対応**：LayerZero メッセージングを使って、あるチェーンで送金し別のチェーンで引き出せます
-- **処理時間**：Mainnet でのプライベート転送は通常30分〜1時間かかります
-- **Testnet の制限**：LayerZero の不安定性により、Testnet では処理に時間がかかる場合があります
+* **クロスチェーン対応**：LayerZero メッセージングを使って、あるチェーンで送金し別のチェーンで引き出せます
+* **処理時間**：Mainnet でのプライベート転送は通常30分〜1時間かかります
+* **Testnet の制限**：LayerZero の不安定性により、Testnet では処理に時間がかかる場合があります
 
 ## 次のステップ
 
-- [プライベート転送（フロントエンド）](private-transfer.md) — プライベートに送受金する
-- [FAQ](../faq.md) — よくある質問とトラブルシューティング
+* [プライベート転送（フロントエンド）](private-transfer.md) — プライベートに送受金する
+* [FAQ](../faq.md) — よくある質問とトラブルシューティング
