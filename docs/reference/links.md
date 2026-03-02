@@ -14,12 +14,18 @@ icon: link
 | フロントエンド（Mainnet） | https://app.zerc20.io/            | zERC20 ウェブアプリ（Mainnet） |
 | フロントエンド（Testnet） | https://v2.testnet.app.zerc20.io/ | zERC20 ウェブアプリ（Testnet） |
 
-## コミュニティ
+## 公式コミュニティ
 
 | 名称            | URL                           | 説明              |
 | ------------- | ----------------------------- | --------------- |
 | Discord       | https://discord.gg/5HCgDyW7tD | コミュニティチャットとサポート |
 | Telegram サポート | https://t.me/zERC20bot        | リアルタイムサポートボット   |
+
+## 非公式コミュニティ
+
+| 名称     | URL                                          | 説明          |
+| ------ | -------------------------------------------- | ----------- |
+| INTMAX 高校 |  [ INTMAX High School （fictional）](https://discord.com/invite/5vTJzW3Zxy) | Start your INTMAX High School life here!  |
 
 ## サポート
 
@@ -31,8 +37,9 @@ icon: link
 
 | 名称     | URL                                          | 説明          |
 | ------ | -------------------------------------------- | ----------- |
-| GitHub | https://github.com/InternetMaximalism/zerc20 | ソースコードリポジトリ |
+| GitHub | https://github.com/InternetMaximalism/zerc20 | 公式ソースコードリポジトリ |
+
 
 ***
 
-> **ドキュメント執筆者向け：** ドキュメント内でフロントエンドを参照する際は、このページの URL を使用して表記を統一してください。
+> **Note：** ドキュメント内でフロントエンドを参照する際は、このページの URL を使用して表記を統一してください。

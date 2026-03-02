@@ -1,7 +1,5 @@
 ---
 icon: github-alt
-metaLinks:
-  canonical: /broken/pages/78JaEVdLGguCHh6Bty5f
 ---
 
 # はじめに
