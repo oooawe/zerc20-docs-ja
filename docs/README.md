@@ -1,55 +1,66 @@
 ---
-icon: transporter
+icon: weixin
+metaLinks:
+  canonical: /broken/pages/78JaEVdLGguCHh6Bty5f
 ---
 
-{% hint style="Note" %}
-本書は理解促進を目的とし [zERC20公式ドキュメント](https://zerc20.gitbook.io/) を翻訳したものになります  
+# はじめに
+
+{% hint style="info" %}
+本書は理解促進を目的とし [zERC20公式ドキュメント](https://zerc20.gitbook.io/) を翻訳したものになります\
 正確な情報確認の際は必ず公式ドキュメントをご参照ください
 {% endhint %}
 
 <details>
+
 <summary>更新履歴</summary>
 
-| wen | issue | memo |
+| when | issue | memo |
 | --- | --- | --- |
 | 2026年2月22日 | 本サイトβ公開 | 翻訳 ver: 0.0.3β |
 | 2026年2月23日 | 外部リンク加筆 | |
 | 2026年2月26日 | 検索機能追加 | |
 | 2026年2月26日 | 日本語翻訳指示/ニュアンス修正 | 翻訳 ver: 0.0.4β |
-| 2026年2月28日 | GitBookに移行 | |
+| 2026年2月28日 | GitBook移行       | 翻訳 ver: 0.1.0  |
 
 </details>
 
+| when | issue | memo |
+| --- | --- | --- |
+| 2026年2月22日 | 本サイトβ公開 | 翻訳 ver: 0.0.3β |
+| 2026年2月23日 | 外部リンク加筆 | |
+| 2026年2月26日 | 検索機能追加 | |
+| 2026年2月26日 | 日本語翻訳指示/ニュアンス修正 | 翻訳 ver: 0.0.4β |
+| 2026年2月28日 | GitBookに移行 | |  
+
 # はじめに
 
-<div align="center" style="padding: 3rem auto;">
-  <img src="assets/common/zerc20logo.svg" width="70%" height="auto">
-</div>  
+<div align="center"><img src=".gitbook/assets/zerc20logo.svg" alt="" width="70%"></div>
 
 **zERC20** は、ERC-20に完全準拠したクロスチェーン対応のプライベート転送（Private Transfer）トークンです。MetaMask などの標準的なウォレットから直接プライベート転送を実行でき、特別なソフトウェアは不要です。第三者から見ると、プライベート転送は通常の転送と区別がつきません。
 
-## 主な特徴
+### 主な特徴
 
 * **ERC-20互換**：ERC-20をサポートするあらゆるウォレット、DEX、DeFiプロトコルで利用できます
 * **プライベート転送**：送信者と受信者のアドレス間の紐付けを隠したまま、トークンを送れます
 * **クロスチェーン対応**：LayerZero を通じて、複数のブロックチェーン間でプライベートに転送できます
 * **特別なウォレット不要**：MetaMask や標準的なEthereumウォレットをそのまま使えます
 
-## プライベート転送の流れ
+### プライベート転送の流れ
 
 1. 一時的なバーンアドレス（Burn Address）を暗号学的に生成
 2. 送信者がバーンアドレスに zERC20 を転送（トークンは実質的にバーン）
 3. 受信者が ZKP（Zero-Knowledge Proof）を使って、任意のアドレスに同額を引き出し
 4. バーンアドレスと引き出しアドレスの紐付けは、オンチェーン上で一切明かされません
 
-## zERC20 の入手方法
+### zERC20 の入手方法
 
 zERC20 は原資産トークン（USDC、ETH、BNB など）に1:1でバックされたラッパートークン（Wrapper Token）です。以下の方法で入手できます：
 
 * **デポジット**：[フロントエンド](https://app.zerc20.io/) または CLI から原資産トークンを預け入れる
 * **購入**：Uniswap などの分散型取引所で購入する
 
-## 次のステップ
+### 次のステップ
 
 * [zERC20 の仕組み](overview/how-it-works.md) — 技術的な詳細を理解する
 * [フロントエンドを使う](users/frontend/getting-started.md) — ウェブアプリで始める
