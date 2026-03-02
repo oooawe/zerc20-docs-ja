@@ -1,13 +1,11 @@
 ---
 icon: weixin
-metaLinks:
-  canonical: /broken/pages/78JaEVdLGguCHh6Bty5f
 ---
 
 # はじめに
 
 {% hint style="info" %}
-本書は理解促進を目的とし [zERC20公式ドキュメント](https://zerc20.gitbook.io/) を翻訳したものになります\
+本書は理解促進を目的とし [zERC20公式ドキュメント](https://zerc20.gitbook.io/) を翻訳したものになります  
 正確な情報確認の際は必ず公式ドキュメントをご参照ください
 {% endhint %}
 
@@ -15,6 +13,8 @@ metaLinks:
 
 <summary>更新履歴</summary>
 
+<small>
+  
 | wen | issue | memo |
 | --- | --- | --- |
 | 2026年2月22日 | 本サイトβ公開 | 翻訳 ver: 0.0.3β |
@@ -23,9 +23,11 @@ metaLinks:
 | 2026年2月26日 | 日本語翻訳指示/ニュアンス修正 | 翻訳 ver: 0.0.4β |
 | 2026年2月28日 | GitBook移行       | 翻訳 ver: 0.1.0  |
 
+</small>
+
 </details>
 
-# はじめに
+# zERC20
 
 <div align="center"><img src=".gitbook/assets/zerc20logo.svg" alt="" width="70%"></div>
 
