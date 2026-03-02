@@ -19,7 +19,7 @@ icon: browser
 5. 送金する zERC20 の金額を入力
 6. 「Send Privately」をクリック
 
-<figure><img src="../../.gitbook/assets/private-send-form.png" alt="Private Send Form" width="480"><figcaption><p>プライベート送金フォーム</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/private-send-form.png" alt="Private Send Form" width="520"><figcaption><p>プライベート送金フォーム</p></figcaption></figure>
 
 転送は以下の3ステップで処理されます：
 
@@ -27,11 +27,11 @@ icon: browser
 2. **保存**：暗号化アナウンスをオンチェーンまたはオフチェーンに保存（後で受信者が Scan して確認）
 3. **送金**：バーンアドレスにトークンを送信
 
-<figure><img src="../../.gitbook/assets/transfer-progress.png" alt="Transfer Progress" width="480"><figcaption><p>転送の進行状況</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/transfer-progress.png" alt="Transfer Progress" width="520"><figcaption><p>転送の進行状況</p></figcaption></figure>
 
 完了すると成功メッセージが表示されます：
 
-<figure><img src="../../.gitbook/assets/transfer-success.png" alt="Transfer Success" width="480"><figcaption><p>転送成功</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/transfer-success.png" alt="Transfer Success" width="520"><figcaption><p>転送成功</p></figcaption></figure>
 
 ### バーンアドレスに送金する
 
@@ -58,7 +58,7 @@ icon: browser
 3. **「Pay with mobile」** オプションにチェックを入れる
 4. 「Pay with mobile」をクリック
 
-<figure><img src="../../.gitbook/assets/pay-with-mobile-form.png" alt="Pay with Mobile Form" width="480"><figcaption><p>Pay with Mobile フォーム</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/pay-with-mobile-form.png" alt="Pay with Mobile Form" width="520"><figcaption><p>Pay with Mobile フォーム</p></figcaption></figure>
 
 5. バーンアドレスを含む QR コードが生成される
 6. 支払い者に QR コードを共有する

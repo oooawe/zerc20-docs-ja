@@ -8,7 +8,7 @@ icon: github-alt
 
 ## プライベート転送の流れ
 
-<div align="center"><img src="../.gitbook/assets/burn_address.png" alt="Burn Address Flow" width="400"></div>
+<div align="center"><img src="../.gitbook/assets/burn_address.png" alt="Burn Address Flow" width="440"></div>
 
 ### ステップ1：バーンアドレスを生成する
 
