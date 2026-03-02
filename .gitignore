@@ -141,10 +141,11 @@ vite.config.ts.timestamp-*
 # MacOS
 .DS_Store
 
-# tree
+# etc
 tree.md
 skill.md
 
 # GitBook
 .gitbook/*
 .gitmessage.txt
+
