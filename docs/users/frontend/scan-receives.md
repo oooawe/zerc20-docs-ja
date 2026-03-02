@@ -1,5 +1,5 @@
 ---
-icon: hand-holding-star
+icon: browser
 ---
 
 # Scan で受け取りを確認する

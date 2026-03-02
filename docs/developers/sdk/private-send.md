@@ -2,13 +2,13 @@
 icon: toilet-paper-check
 ---
 
-# プライベート送信
+# プライベート転送
 
 このページでは、SDK を使ったプライベート zERC20 転送（Private Transfer）の各ステップを詳しく説明します。
 
 ## 仕組み
 
-プライベート送信は、オンチェーンとオフチェーンにまたがる3つのフェーズで処理されます：
+プライベート転送は、オンチェーンとオフチェーンにまたがる3つのフェーズで処理されます：
 
 1. **バーンアドレス（Burn Address）の導出** — 送信者が受信者のアドレスとランダムな secret から、Poseidon Hash（16ビットの Proof-of-Work チェック付き）を使って決定論的なバーンアドレスを計算します。
 2. **バーンアドレスへの zERC20 送金** — 標準の ERC-20 `transfer` でトークンをバーンアドレスに送ります。Indexer が転送リーフを記録します。
@@ -18,7 +18,7 @@ icon: toilet-paper-check
 
 ## ステップ1：Seed を導出する
 
-すべてのプライベート送信は **seed** から始まります。seed はウォレットで署名したメッセージから決定論的にステルス鍵を導出します。
+すべてのプライベート転送は **seed** から始まります。seed はウォレットで署名したメッセージから決定論的にステルス鍵を導出します。
 
 ```typescript
 import { getSeedMessage } from "zerc20-client-sdk";
@@ -34,7 +34,7 @@ const seedHex = keccak256(toBytes(signature));
 
 `getSeedMessage()` は `Promise<string>` を返す非同期関数です。ウォレット署名（65バイト）は `keccak256` でハッシュ化して32バイトの hex 文字列（`seedHex`）にする必要があります。SDK は `seedHex` が正確に32バイトであることを検証し、そうでなければエラーをスローします。
 
-## ステップ2：プライベート送信を準備する
+## ステップ2：プライベート転送を準備する
 
 `preparePrivateSend()` を呼び出してバーンアドレスを導出し、secret を生成し、暗号化アナウンスのペイロードを構築します。
 

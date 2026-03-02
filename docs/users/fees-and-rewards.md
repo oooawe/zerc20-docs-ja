@@ -1,5 +1,5 @@
 ---
-icon: comments-dollar
+icon: hand-holding-star
 ---
 
 # 手数料とリワード

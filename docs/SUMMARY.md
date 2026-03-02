@@ -18,7 +18,7 @@
 
 * [アーキテクチャ概要](developers/architecture.md)
 * [SDK ガイド](developers/sdk/quickstart.md)
-  * [プライベート送信](developers/sdk/private-send.md)
+  * [プライベート転送](developers/sdk/private-send.md)
   * [受け取り](developers/sdk/receiving.md)
   * [Invoice](developers/sdk/invoices.md)
   * [Wrap と Unwrap](developers/sdk/wrap-unwrap.md)
