@@ -23,7 +23,7 @@ icon: github-alt
 
 </details>
 
-<div align="center"><img src=".gitbook/assets/zerc20logo.svg" alt="" width="70%"></div>
+<div align="center"><img src="assets/common/zerc20logo.svg" alt="" width="70%"></div>
 
 **zERC20** は、ERC-20に完全準拠したクロスチェーン対応のプライベート転送（Private Transfer）トークンです。MetaMask などの標準的なウォレットから直接プライベート転送を実行でき、特別なソフトウェアは不要です。第三者から見ると、プライベート転送は通常の転送と区別がつきません。
 

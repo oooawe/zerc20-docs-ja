@@ -12,7 +12,7 @@ icon: browser
 
 > **💡 Hint：** テストトークンで試したい場合は、[Testnet フロントエンド](https://v2.testnet.app.zerc20.io/) を使用してください。
 
-<figure><img src="../../.gitbook/assets/dashboard-overview.png" alt="Dashboard Overview" width="600"><figcaption><p>ダッシュボード概要</p></figcaption></figure>
+<figure><img src="../../assets/frontend/dashboard-overview.png" alt="Dashboard Overview" width="600"><figcaption><p>ダッシュボード概要</p></figcaption></figure>
 
 ## ステップ2：ウォレットを接続する
 
@@ -30,7 +30,7 @@ zERC20 トークンは、原資産トークンに1:1でバックされた ERC-20
 
 |                            トークン選択                           |                            チェーン選択                           |
 | :---------------------------------------------------------: | :---------------------------------------------------------: |
-| ![Token Selector](../../.gitbook/assets/token-selector.png) | ![Chain Selector](../../.gitbook/assets/chain-selector.png) |
+| ![Token Selector](../../assets/frontend/token-selector.png) | ![Chain Selector](../../assets/frontend/chain-selector.png) |
 
 ### 方法A：トークンをWrapする
 
@@ -41,7 +41,7 @@ Wrap とは、標準トークン（USDC、ETH など）を zERC20 トークン�
 3. Wrap するトークンを選択（USDC、ETH、BNB など）
 4. 金額を入力
 
-<figure><img src="../../.gitbook/assets/wrap-modal-input.png" alt="Wrap Modal with Amount" width="520"><figcaption><p>Wrap モーダル — 変換する金額を入力</p></figcaption></figure>
+<figure><img src="../../assets/frontend/wrap-modal-input.png" alt="Wrap Modal with Amount" width="520"><figcaption><p>Wrap モーダル — 変換する金額を入力</p></figcaption></figure>
 
 5. 「Wrap USDC to zUSDC」（または対応するトークン）をクリック
 6. ウォレットでトランザクションを承認
@@ -51,7 +51,7 @@ Wrap とは、標準トークン（USDC、ETH など）を zERC20 トークン�
 
 Wrap 完了後、残高が更新されます：
 
-<figure><img src="../../.gitbook/assets/dashboard-after-wrap.png" alt="Dashboard After Wrap" width="600"><figcaption><p>更新された zERC20 残高を表示するダッシュボード</p></figcaption></figure>
+<figure><img src="../../assets/frontend/dashboard-after-wrap.png" alt="Dashboard After Wrap" width="600"><figcaption><p>更新された zERC20 残高を表示するダッシュボード</p></figcaption></figure>
 
 ### 方法B：DEXで購入する
 
@@ -73,7 +73,7 @@ zERC20 トークンを原資産トークンに戻す手順：
 
 「Chain (Current)」を選択すると、現在のチェーンで原資産トークンを受け取れます。
 
-<figure><img src="../../.gitbook/assets/unwrap-same-chain.png" alt="Unwrap Same Chain" width="520"><figcaption><p>現在のチェーンへUnwrap</p></figcaption></figure>
+<figure><img src="../../assets/frontend/unwrap-same-chain.png" alt="Unwrap Same Chain" width="520"><figcaption><p>現在のチェーンへUnwrap</p></figcaption></figure>
 
 **クロスチェーンUnwrap：**
 
@@ -85,7 +85,7 @@ zERC20 トークンを原資産トークンに戻す手順：
 
 例えば Arbitrum にいる場合に「Base」を選択すると、フローは **Arbitrum → Base → Arbitrum** となります。Unwrap は Base で行われますが、原資産トークンは Arbitrum で受け取れます。
 
-<figure><img src="../../.gitbook/assets/unwrap-cross-chain.png" alt="Unwrap Cross Chain" width="520"><figcaption><p>別のネットワークの流動性を使ったクロスチェーンUnwrap</p></figcaption></figure>
+<figure><img src="../../assets/frontend/unwrap-cross-chain.png" alt="Unwrap Cross Chain" width="520"><figcaption><p>別のネットワークの流動性を使ったクロスチェーンUnwrap</p></figcaption></figure>
 
 トランザクション確認前に手数料の内訳（Unwrap手数料・ブリッジ手数料・LayerZero手数料）が表示されます。
 
