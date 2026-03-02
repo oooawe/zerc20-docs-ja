@@ -1,14 +1,18 @@
-# SDK クイックスタート
+---
+icon: toilet-paper-check
+---
+
+# SDK ガイド
 
 `zerc20-client-sdk` を使って TypeScript アプリケーションからプライベート zERC20 転送（Private Transfer）を送信する方法を説明します。
 
 ## 前提条件
 
-| 要件 | 詳細 |
-|-------------|---------|
-| **Node.js** | >= 18 |
+| 要件            | 詳細                                  |
+| ------------- | ----------------------------------- |
+| **Node.js**   | >= 18                               |
 | **EVM ウォレット** | メッセージに署名できるウォレット（MetaMask、Rabby など） |
-| **サポートチェーン** | Ethereum、Arbitrum、または Base |
+| **サポートチェーン**  | Ethereum、Arbitrum、または Base          |
 
 ## インストール
 
@@ -28,12 +32,12 @@ const sdk = createSdk();
 
 `Zerc20SdkOptions` には以下のオプションフィールドを指定できます：
 
-| フィールド | 型 | 説明 |
-|-------|------|-------------|
-| `wasm` | `WasmRuntime` | カスタム WASM ランタイム（省略時は自動検出） |
-| `teleportProofs` | `TeleportProofClient` | カスタム Teleport Proof クライアント |
-| `decider` | `HttpDeciderClient` | Decider Prover エンドポイント |
-| `stealth` | `StealthClientFactory` | カスタムステルスクライアントファクトリ |
+| フィールド            | 型                      | 説明                         |
+| ---------------- | ---------------------- | -------------------------- |
+| `wasm`           | `WasmRuntime`          | カスタム WASM ランタイム（省略時は自動検出）  |
+| `teleportProofs` | `TeleportProofClient`  | カスタム Teleport Proof クライアント |
+| `decider`        | `HttpDeciderClient`    | Decider Prover エンドポイント     |
+| `stealth`        | `StealthClientFactory` | カスタムステルスクライアントファクトリ        |
 
 返された `Zerc20Sdk` は以下のフィールドに直接アクセスできます：
 
@@ -196,7 +200,7 @@ console.log("Announcement submitted:", result);
 
 ## 次のステップ
 
-- [プライベート送信](private-send.md) — 各ステップの詳細な説明
-- [受け取り](receiving.md) — 受け取った転送の Scan と請求
-- [インテグレーションガイド](../integration.md) — オンチェーンオラクルとセルフホスト型 Indexer
-- [コントラクトアドレス](../../reference/addresses.md) — チェーンごとのデプロイ済みアドレス
+* [プライベート送信](private-send.md) — 各ステップの詳細な説明
+* [受け取り](receiving.md) — 受け取った転送の Scan と請求
+* [インテグレーションガイド](../integration.md) — オンチェーンオラクルとセルフホスト型 Indexer
+* [コントラクトアドレス](../../reference/addresses.md) — チェーンごとのデプロイ済みアドレス

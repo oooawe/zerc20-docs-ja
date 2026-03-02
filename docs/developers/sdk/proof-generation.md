@@ -1,12 +1,16 @@
+---
+icon: toilet-paper-check
+---
+
 # Proof 生成
 
 受け取り（[受け取り](receiving.md)を参照）で転送をスキャンした後、トークンをオンチェーンで請求するためのゼロ知識証明（Zero-Knowledge Proof）を生成します。SDK は Proof 生成を内部で処理します。`collectRedeemContext` から得たデータを渡すと、即座に送信できるコールデータが返ってきます。
 
 ## 2 つの Proof モード
 
-| モード | ユースケース | ガスコスト |
-|--------|------------|----------|
-| **Single**（Groth16） | 転送を 1 件ずつ請求 | 1 件あたりのコストが高い |
+| モード                       | ユースケース       | ガスコスト         |
+| ------------------------- | ------------ | ------------- |
+| **Single**（Groth16）       | 転送を 1 件ずつ請求  | 1 件あたりのコストが高い |
 | **Batch**（Nova + Decider） | 複数の転送をまとめて請求 | 1 件あたりのコストが低い |
 
 ## Single Proof
@@ -74,6 +78,6 @@ const txHash = await verifier.write.teleport([
 
 ## 次のステップ
 
-- [受け取り](receiving.md) — 受信転送のスキャンと Proof 入力の構築
-- [SDK クイックスタート](quickstart.md) — インストールとはじめてのプライベート送信
-- [Wrap と Unwrap](wrap-unwrap.md) — 原資産トークンと zERC20 の相互変換
+* [受け取り](receiving.md) — 受信転送のスキャンと Proof 入力の構築
+* [SDK クイックスタート](quickstart.md) — インストールとはじめてのプライベート送信
+* [Wrap と Unwrap](wrap-unwrap.md) — 原資産トークンと zERC20 の相互変換

@@ -1,3 +1,7 @@
+---
+icon: github-alt
+---
+
 # zERC20 の仕組み
 
 このページでは、zERC20のプライベート転送（Private Transfer）の仕組みと、提供されるプライバシー保証について説明します。

@@ -1,3 +1,7 @@
+---
+icon: timeline-arrow
+---
+
 # インテグレーションガイド
 
 > **💡 Hint：** SDK を使いたい場合（プライベート送信・Scan・Wrap / Unwrap など）は [SDK ガイド](sdk/quickstart.md) を参照してください。このページはより低レベルなコントラクトインテグレーションとオラクル利用を対象としています。
@@ -105,19 +109,19 @@ Transfer Merkle Tree の各リーフは1件の転送を表します：
 leaf_hash = Poseidon3(from, to, value)
 ```
 
-| フィールド | 型 | 説明 |
-| ------- | --------- | ---------------------------------------------- |
+| フィールド   | 型         | 説明                  |
+| ------- | --------- | ------------------- |
 | `from`  | `address` | 送信者アドレス（フィールド要素に変換） |
 | `to`    | `address` | 受信者アドレス（フィールド要素に変換） |
-| `value` | `uint256` | 転送金額（フィールド要素に変換） |
+| `value` | `uint256` | 転送金額（フィールド要素に変換）    |
 
 ### ツリー構造
 
 Merkle Root には2種類あります：
 
-| Root の種別 | 説明 | ツリーの高さ |
-| ------------------------ | ---------------------------------- | ----------- |
-| **Local Transfer Root** | チェーンごとの転送 Merkle Root | 40 |
+| Root の種別                 | 説明                    | ツリーの高さ     |
+| ------------------------ | --------------------- | ---------- |
+| **Local Transfer Root**  | チェーンごとの転送 Merkle Root | 40         |
 | **Global Transfer Root** | クロスチェーン集約 Merkle Root | 46（40 + 6） |
 
 Global Transfer Tree は、全チェーンの Local Transfer Root を集約ツリー（高さ6・最大64チェーン対応）で集約して構築されます。
@@ -167,8 +171,8 @@ interface IVerifier {
 
 Merkle Proof の検証は**スマートコントラクト上でオンチェーン**に行う方法と、**ZKP 回路を使ってオフチェーン**で行う方法があります。用途に応じて選択してください：
 
-- **オンチェーン検証**：ガスコストが許容範囲内のシンプルなメンバーシップ証明に適しています
-- **ZKP 検証**：プライバシー保護アプリケーションや、オンチェーンでは高コストになる複雑なロジックに最適です
+* **オンチェーン検証**：ガスコストが許容範囲内のシンプルなメンバーシップ証明に適しています
+* **ZKP 検証**：プライバシー保護アプリケーションや、オンチェーンでは高コストになる複雑なロジックに最適です
 
 ```javascript
 // On-chain verification example
@@ -194,10 +198,10 @@ contract MyContract {
 
 zERC20 が使用する Poseidon Hash は [circomlib の Poseidon ライブラリ](https://github.com/iden3/circomlib/blob/master/circuits/poseidon.circom) と完全に互換性があります：
 
-| 用途 | circomlib テンプレート | 説明 |
-| --------- | ------------------ | --------------------------- |
-| リーフハッシュ | `Poseidon(3)` | `Poseidon(from, to, value)` |
-| ノードハッシュ | `Poseidon(2)` | `Poseidon(left, right)` |
+| 用途      | circomlib テンプレート | 説明                          |
+| ------- | ---------------- | --------------------------- |
+| リーフハッシュ | `Poseidon(3)`    | `Poseidon(from, to, value)` |
+| ノードハッシュ | `Poseidon(2)`    | `Poseidon(left, right)`     |
 
 この互換性により、開発者は circomlib を使ったカスタム ZK 回路を構築して、zERC20 の Transfer Merkle Tree に対するメンバーシップ証明を検証できます。
 
@@ -234,13 +238,13 @@ Indexer ノードに照会して Local Transfer Merkle Proof を取得します�
 ]
 ```
 
-| フィールド | 説明 |
-| -------------- | --------------------------------------------- |
-| `target_index` | 証明対象のツリーインデックス（スナップショット） |
-| `leaf_index`   | ツリー内のリーフの位置 |
-| `root`         | target_index 時点の Merkle Root |
-| `hash_chain`   | target_index 時点の Hash Chain 値 |
-| `siblings`     | 証明パスの40個の兄弟ハッシュの配列 |
+| フィールド          | 説明                             |
+| -------------- | ------------------------------ |
+| `target_index` | 証明対象のツリーインデックス（スナップショット）       |
+| `leaf_index`   | ツリー内のリーフの位置                    |
+| `root`         | target\_index 時点の Merkle Root  |
+| `hash_chain`   | target\_index 時点の Hash Chain 値 |
+| `siblings`     | 証明パスの40個の兄弟ハッシュの配列             |
 
 **補助エンドポイント — ツリーインデックスを取得：**
 

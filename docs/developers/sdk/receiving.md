@@ -1,3 +1,7 @@
+---
+icon: toilet-paper-check
+---
+
 # 受け取り
 
 zERC20 トークンの受け取りは2つのフェーズで行います：
@@ -31,13 +35,13 @@ function createAuthorizationPayload(
 
 **AuthorizationPayload：**
 
-| フィールド | 型 | 説明 |
-| ------------------ | -------- | ------------------------------------------------------ |
-| `message`          | `string` | ウォレットのプロンプトに表示する人間可読なメッセージ |
-| `canonicalMessage` | `Uint8Array` | canister 上での検証に使用する正規形式 |
-| `expiryNs`        | `bigint` | ナノ秒単位の有効期限タイムスタンプ |
-| `nonce`            | `bigint` | リプレイ攻撃を防ぐためのランダムなノンス |
-| `transport`        | `object` | VetKey 復号用の一時的なトランスポートキーペア |
+| フィールド              | 型            | 説明                         |
+| ------------------ | ------------ | -------------------------- |
+| `message`          | `string`     | ウォレットのプロンプトに表示する人間可読なメッセージ |
+| `canonicalMessage` | `Uint8Array` | canister 上での検証に使用する正規形式    |
+| `expiryNs`         | `bigint`     | ナノ秒単位の有効期限タイムスタンプ          |
+| `nonce`            | `bigint`     | リプレイ攻撃を防ぐためのランダムなノンス       |
+| `transport`        | `object`     | VetKey 復号用の一時的なトランスポートキーペア |
 
 ## ステップ2：認証メッセージに署名する
 
@@ -105,23 +109,23 @@ function scanReceivings(
 
 **ScanReceivingsParams：**
 
-| フィールド | 型 | 必須 | 説明 |
-| ------------ | ------------------------ | -------- | ------------------------------------------------ |
-| `client`     | `StealthCanisterClient`  | 必須 | ICP canister クライアント |
-| `vetKey`     | `VetKey`                 | 必須 | ステップ3の復号キー |
-| `pageSize`   | `number`                 | オプション | 1ページあたりのアナウンス数（デフォルト: 100） |
-| `startAfter` | `bigint \| undefined`    | オプション | 前回の Scan 後のアナウンス ID（続きから再開） |
-| `tag`        | `string \| undefined`    | オプション | タグによるアナウンスのフィルタリング |
+| フィールド        | 型                       | 必須    | 説明                          |
+| ------------ | ----------------------- | ----- | --------------------------- |
+| `client`     | `StealthCanisterClient` | 必須    | ICP canister クライアント         |
+| `vetKey`     | `VetKey`                | 必須    | ステップ3の復号キー                  |
+| `pageSize`   | `number`                | オプション | 1ページあたりのアナウンス数（デフォルト: 100）  |
+| `startAfter` | `bigint \| undefined`   | オプション | 前回の Scan 後のアナウンス ID（続きから再開） |
+| `tag`        | `string \| undefined`   | オプション | タグによるアナウンスのフィルタリング          |
 
 **ScannedAnnouncement：**
 
-| フィールド | 型 | 説明 |
-| ------------------ | -------- | --------------------------------------------- |
-| `id`               | `bigint` | アナウンスの一意な識別子 |
+| フィールド              | 型        | 説明                       |
+| ------------------ | -------- | ------------------------ |
+| `id`               | `bigint` | アナウンスの一意な識別子             |
 | `burnAddress`      | `string` | 切り詰めたバーンアドレス（オンチェーンの送金先） |
-| `fullBurnAddress`  | `string` | 切り詰め前の完全なバーンアドレス |
-| `createdAtNs`      | `bigint` | ナノ秒単位の作成タイムスタンプ |
-| `recipientChainId` | `bigint` | 受信者が Redeem するチェーン ID |
+| `fullBurnAddress`  | `string` | 切り詰め前の完全なバーンアドレス         |
+| `createdAtNs`      | `bigint` | ナノ秒単位の作成タイムスタンプ          |
+| `recipientChainId` | `bigint` | 受信者が Redeem するチェーン ID    |
 
 ## ステップ5：Redeem コンテキストを収集する
 
@@ -151,33 +155,33 @@ function collectRedeemContext(
 
 **RedeemContextParams：**
 
-| フィールド | 型 | 必須 | 説明 |
-| ------------------- | ---------------- | -------- | -------------------------------------- |
-| `burn`              | `BurnArtifacts`  | 必須 | アナウンスの BurnArtifacts |
-| `tokens`            | `TokenConfig`    | 必須 | トークン設定 |
-| `hub`               | `HubConfig`      | 必須 | Hub コントラクトアドレスまたは設定 |
-| `verifierContract`  | `Contract`       | 必須 | Verifier コントラクトインスタンス |
-| `indexerUrl`        | `string`         | 必須 | Indexer の HTTP エンドポイント |
-| `indexerFetchLimit` | `number`         | オプション | Indexer リクエストあたりの最大イベント数 |
-| `eventBlockSpan`    | `bigint \| number` | オプション | イベントスキャンあたりのブロック範囲 |
+| フィールド               | 型                  | 必須    | 説明                       |
+| ------------------- | ------------------ | ----- | ------------------------ |
+| `burn`              | `BurnArtifacts`    | 必須    | アナウンスの BurnArtifacts     |
+| `tokens`            | `TokenConfig`      | 必須    | トークン設定                   |
+| `hub`               | `HubConfig`        | 必須    | Hub コントラクトアドレスまたは設定      |
+| `verifierContract`  | `Contract`         | 必須    | Verifier コントラクトインスタンス    |
+| `indexerUrl`        | `string`           | 必須    | Indexer の HTTP エンドポイント   |
+| `indexerFetchLimit` | `number`           | オプション | Indexer リクエストあたりの最大イベント数 |
+| `eventBlockSpan`    | `bigint \| number` | オプション | イベントスキャンあたりのブロック範囲       |
 
 **RedeemContext：**
 
-| フィールド | 型 | 説明 |
-| -------------------- | ------------------- | -------------------------------------------------------- |
-| `token`              | `TokenInfo`         | 解決済みのトークンメタデータ |
-| `aggregationState`   | `AggregationState`  | Hub の現在の集約スナップショット |
-| `events`             | `object`            | `eligible`（引き出し可能）と `ineligible`（未確定）のイベント配列 |
-| `globalProofs`       | `GlobalProof[]`     | 引き出し可能なイベントのグローバル Merkle Proof |
-| `eligibleProofs`     | `EligibleProof[]`   | ZKP 生成準備済みのイベントごとの Proof |
-| `totalEligibleValue` | `bigint`            | 今すぐ Redeem できる金額の合計 |
-| `totalPendingValue`  | `bigint`            | まだ証明済み Root に含まれていない金額の合計 |
-| `totalIndexedValue`  | `bigint`            | このバーンアドレスのインデックス済み全金額の合計 |
-| `totalTeleported`    | `bigint`            | 受信者にすでに Teleport（ミント）された金額 |
-| `chains`             | `ChainBreakdown[]`  | チェーンごとの引き出し可能・保留中の金額内訳 |
+| フィールド                | 型                  | 説明                                           |
+| -------------------- | ------------------ | -------------------------------------------- |
+| `token`              | `TokenInfo`        | 解決済みのトークンメタデータ                               |
+| `aggregationState`   | `AggregationState` | Hub の現在の集約スナップショット                           |
+| `events`             | `object`           | `eligible`（引き出し可能）と `ineligible`（未確定）のイベント配列 |
+| `globalProofs`       | `GlobalProof[]`    | 引き出し可能なイベントのグローバル Merkle Proof               |
+| `eligibleProofs`     | `EligibleProof[]`  | ZKP 生成準備済みのイベントごとの Proof                     |
+| `totalEligibleValue` | `bigint`           | 今すぐ Redeem できる金額の合計                          |
+| `totalPendingValue`  | `bigint`           | まだ証明済み Root に含まれていない金額の合計                    |
+| `totalIndexedValue`  | `bigint`           | このバーンアドレスのインデックス済み全金額の合計                     |
+| `totalTeleported`    | `bigint`           | 受信者にすでに Teleport（ミント）された金額                   |
+| `chains`             | `ChainBreakdown[]` | チェーンごとの引き出し可能・保留中の金額内訳                       |
 
-- **Eligible イベント**：Merkle Root がオンチェーンで証明済みで Hub に集約済みの転送。今すぐ Redeem できます。
-- **Ineligible イベント**：インデックスは済んでいるが、Root がまだ証明または集約されていない転送。Indexer とクロスチェーンジョブが追いつき次第、Eligible になります。
+* **Eligible イベント**：Merkle Root がオンチェーンで証明済みで Hub に集約済みの転送。今すぐ Redeem できます。
+* **Ineligible イベント**：インデックスは済んでいるが、Root がまだ証明または集約されていない転送。Indexer とクロスチェーンジョブが追いつき次第、Eligible になります。
 
 ## ステップ6：Proof を生成して Teleport する
 
@@ -232,9 +236,9 @@ function getAnnouncementStatus(
 
 **AnnouncementStatus：**
 
-| フィールド | 型 | 説明 |
-| -------------------- | -------- | ---------------------------------------------------- |
-| `totalEligibleValue` | `bigint` | 今すぐ Redeem できる金額の合計 |
-| `totalPendingValue`  | `bigint` | まだ証明済み Root に含まれていない金額の合計 |
-| `totalIndexedValue`  | `bigint` | このバーンアドレスのインデックス済み全金額の合計 |
+| フィールド                | 型        | 説明                         |
+| -------------------- | -------- | -------------------------- |
+| `totalEligibleValue` | `bigint` | 今すぐ Redeem できる金額の合計        |
+| `totalPendingValue`  | `bigint` | まだ証明済み Root に含まれていない金額の合計  |
+| `totalIndexedValue`  | `bigint` | このバーンアドレスのインデックス済み全金額の合計   |
 | `totalTeleported`    | `bigint` | 受信者にすでに Teleport（ミント）された金額 |

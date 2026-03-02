@@ -1,4 +1,8 @@
-# CLI を使いはじめる
+---
+icon: rectangle-terminal
+---
+
+# CLI を使う
 
 このガイドでは、zERC20 コマンドラインインターフェース（CLI）のインストールと使い方を説明します。
 
@@ -118,11 +122,11 @@ zerc20-cli invoice receive --chain-id 1 --invoice-id inv-01
 
 ## 重要な注意事項
 
-- **クロスチェーン対応**：あるチェーンで送金し、別のチェーンで受け取ることができます
-- **処理時間**：Mainnet でのプライベート転送（Private Transfer）は通常30分〜1時間かかります
-- **Testnet の制限**：LayerZero の不安定性により、Testnet では処理に時間がかかる場合があります
+* **クロスチェーン対応**：あるチェーンで送金し、別のチェーンで受け取ることができます
+* **処理時間**：Mainnet でのプライベート転送（Private Transfer）は通常30分〜1時間かかります
+* **Testnet の制限**：LayerZero の不安定性により、Testnet では処理に時間がかかる場合があります
 
 ## 次のステップ
 
-- [FAQ](../faq.md) — よくある質問とトラブルシューティング
-- [CLI README](https://github.com/InternetMaximalism/zerc20/tree/main/cli) — CLI の完全なドキュメント
+* [FAQ](../faq.md) — よくある質問とトラブルシューティング
+* [CLI README](https://github.com/InternetMaximalism/zerc20/tree/main/cli) — CLI の完全なドキュメント

@@ -1,4 +1,4 @@
-# 目次
+# Table of contents
 
 ## 概要
 
@@ -30,9 +30,9 @@
 * [Proof of Innocence（予定）](developers/proof-of-innocence.md)
 * [Indexer API](developers/indexer-api.md)
 * [技術仕様](developers/specs/README.md)
-  * [Contract 仕様](developers/specs/contract-spec.md)
-  * [ZKP 仕様](developers/specs/zkp-spec.md)
-  * [ICP ストレージ仕様](developers/specs/icp-storage-spec.md)
+  * [Contract Specification](developers/specs/contract-spec.md)
+  * [ZKP Specification](developers/specs/zkp-spec.md)
+  * [ICP ストレージ](developers/specs/icp-storage-spec.md)
 
 ## リファレンス
 

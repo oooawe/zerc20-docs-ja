@@ -1,3 +1,7 @@
+---
+icon: browser
+---
+
 # Scan で受け取りを確認する
 
 このガイドでは、zERC20 ウェブアプリを使ったプライベート転送（Private Transfer）の受け取り方法を説明します。

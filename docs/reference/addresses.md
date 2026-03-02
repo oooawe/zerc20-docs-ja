@@ -1,3 +1,7 @@
+---
+icon: book
+---
+
 # コントラクトアドレス
 
 > **正式な情報源**：`config/deployed/` 配下の JSON ファイルです。このページはそれらから生成されています。不明な点は `config/deployed/mainnet/` または `config/deployed/testnet/` を参照してください。
@@ -10,32 +14,32 @@
 
 #### Ethereum
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0x410056c6F0A9ABD8c42b9eEF3BB451966Fb0d924` |
-| Verifier | `0xdCC76DEbb526Eef0210Bd38729b803591951Ab34` |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0x410056c6F0A9ABD8c42b9eEF3BB451966Fb0d924` |
+| Verifier         | `0xdCC76DEbb526Eef0210Bd38729b803591951Ab34` |
 | LiquidityManager | `0xcC10b7098FEf1aB2f0FF3bE91d2A7B3230b90CF0` |
-| Adaptor | `0xfDe2C5758BbdDcDEa2d73EdeB5C13DE98B21Eb7D` |
+| Adaptor          | `0xfDe2C5758BbdDcDEa2d73EdeB5C13DE98B21Eb7D` |
 
 #### Arbitrum
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0x410056c6F0A9ABD8c42b9eEF3BB451966Fb0d924` |
-| Verifier | `0xdCC76DEbb526Eef0210Bd38729b803591951Ab34` |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0x410056c6F0A9ABD8c42b9eEF3BB451966Fb0d924` |
+| Verifier         | `0xdCC76DEbb526Eef0210Bd38729b803591951Ab34` |
 | LiquidityManager | `0xcC10b7098FEf1aB2f0FF3bE91d2A7B3230b90CF0` |
-| Adaptor | `0xfDe2C5758BbdDcDEa2d73EdeB5C13DE98B21Eb7D` |
+| Adaptor          | `0xfDe2C5758BbdDcDEa2d73EdeB5C13DE98B21Eb7D` |
 
 #### Base
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0x410056c6F0A9ABD8c42b9eEF3BB451966Fb0d924` |
-| Verifier | `0xdCC76DEbb526Eef0210Bd38729b803591951Ab34` |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0x410056c6F0A9ABD8c42b9eEF3BB451966Fb0d924` |
+| Verifier         | `0xdCC76DEbb526Eef0210Bd38729b803591951Ab34` |
 | LiquidityManager | `0xcC10b7098FEf1aB2f0FF3bE91d2A7B3230b90CF0` |
-| Adaptor | `0xfDe2C5758BbdDcDEa2d73EdeB5C13DE98B21Eb7D` |
+| Adaptor          | `0xfDe2C5758BbdDcDEa2d73EdeB5C13DE98B21Eb7D` |
 
----
+***
 
 ### zUSDC
 
@@ -43,32 +47,32 @@
 
 #### Ethereum
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0xEB81ab55Bc7aa89d1e0E3F60597D86e37702Af53` |
-| Verifier | `0xfb786B5E6520284Aa6a8dFA3B4F7A09ed423e25f` |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0xEB81ab55Bc7aa89d1e0E3F60597D86e37702Af53` |
+| Verifier         | `0xfb786B5E6520284Aa6a8dFA3B4F7A09ed423e25f` |
 | LiquidityManager | `0x04be137Df79bE7B5F3314C4a84D1C5E0d99BD477` |
-| Adaptor | `0x3fCBc7f919b712258859e2e3c78188168E47B287` |
+| Adaptor          | `0x3fCBc7f919b712258859e2e3c78188168E47B287` |
 
 #### Arbitrum
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0xEB81ab55Bc7aa89d1e0E3F60597D86e37702Af53` |
-| Verifier | `0xfb786B5E6520284Aa6a8dFA3B4F7A09ed423e25f` |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0xEB81ab55Bc7aa89d1e0E3F60597D86e37702Af53` |
+| Verifier         | `0xfb786B5E6520284Aa6a8dFA3B4F7A09ed423e25f` |
 | LiquidityManager | `0x04be137Df79bE7B5F3314C4a84D1C5E0d99BD477` |
-| Adaptor | `0x3fCBc7f919b712258859e2e3c78188168E47B287` |
+| Adaptor          | `0x3fCBc7f919b712258859e2e3c78188168E47B287` |
 
 #### Base
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0xEB81ab55Bc7aa89d1e0E3F60597D86e37702Af53` |
-| Verifier | `0xfb786B5E6520284Aa6a8dFA3B4F7A09ed423e25f` |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0xEB81ab55Bc7aa89d1e0E3F60597D86e37702Af53` |
+| Verifier         | `0xfb786B5E6520284Aa6a8dFA3B4F7A09ed423e25f` |
 | LiquidityManager | `0x04be137Df79bE7B5F3314C4a84D1C5E0d99BD477` |
-| Adaptor | `0x3fCBc7f919b712258859e2e3c78188168E47B287` |
+| Adaptor          | `0x3fCBc7f919b712258859e2e3c78188168E47B287` |
 
----
+***
 
 ### zBNB
 
@@ -76,43 +80,43 @@
 
 #### BNB Chain
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0x4388D5618B9e13Bd580209CDf37a202778C75c54` |
-| Verifier | `0xb05977Af4aA54117910ed72141F674531894774A` |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0x4388D5618B9e13Bd580209CDf37a202778C75c54` |
+| Verifier         | `0xb05977Af4aA54117910ed72141F674531894774A` |
 | LiquidityManager | `0x39Cc069dF606c7bc8c79b0ADd0696BCaf548eFD9` |
-| Adaptor | — |
+| Adaptor          | —                                            |
 
 > **📃 Note：** zBNB の Wrap / Unwrap は BNB Chain のみ対応しています。他のチェーンは LayerZero OFT を通じた zBNB 転送をサポートしていますが、LiquidityManager コントラクトは配備されていません。
 
 #### Ethereum
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0x4388D5618B9e13Bd580209CDf37a202778C75c54` |
-| Verifier | `0xb05977Af4aA54117910ed72141F674531894774A` |
-| LiquidityManager | — |
-| Adaptor | — |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0x4388D5618B9e13Bd580209CDf37a202778C75c54` |
+| Verifier         | `0xb05977Af4aA54117910ed72141F674531894774A` |
+| LiquidityManager | —                                            |
+| Adaptor          | —                                            |
 
 #### Arbitrum
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0x4388D5618B9e13Bd580209CDf37a202778C75c54` |
-| Verifier | `0xb05977Af4aA54117910ed72141F674531894774A` |
-| LiquidityManager | — |
-| Adaptor | — |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0x4388D5618B9e13Bd580209CDf37a202778C75c54` |
+| Verifier         | `0xb05977Af4aA54117910ed72141F674531894774A` |
+| LiquidityManager | —                                            |
+| Adaptor          | —                                            |
 
 #### Base
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0x4388D5618B9e13Bd580209CDf37a202778C75c54` |
-| Verifier | `0xb05977Af4aA54117910ed72141F674531894774A` |
-| LiquidityManager | — |
-| Adaptor | — |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0x4388D5618B9e13Bd580209CDf37a202778C75c54` |
+| Verifier         | `0xb05977Af4aA54117910ed72141F674531894774A` |
+| LiquidityManager | —                                            |
+| Adaptor          | —                                            |
 
----
+***
 
 ## Testnet
 
@@ -122,40 +126,40 @@
 
 #### Sepolia
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0xADAb5CaB352fb1eBF24CD951de224f9e952C82Ed` |
-| Verifier | `0xD19b79cE0C2821158aDBDEf9cC8c8D858c9ef0Cc` |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0xADAb5CaB352fb1eBF24CD951de224f9e952C82Ed` |
+| Verifier         | `0xD19b79cE0C2821158aDBDEf9cC8c8D858c9ef0Cc` |
 | LiquidityManager | `0x5a09Cc328fA6bB32f3d6fC54906106ddD49a2D7c` |
-| Adaptor | `0x588F07b52E50E8600F654c63176818403F6E3EB6` |
+| Adaptor          | `0x588F07b52E50E8600F654c63176818403F6E3EB6` |
 
 #### Arbitrum Sepolia
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0xADAb5CaB352fb1eBF24CD951de224f9e952C82Ed` |
-| Verifier | `0xD19b79cE0C2821158aDBDEf9cC8c8D858c9ef0Cc` |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0xADAb5CaB352fb1eBF24CD951de224f9e952C82Ed` |
+| Verifier         | `0xD19b79cE0C2821158aDBDEf9cC8c8D858c9ef0Cc` |
 | LiquidityManager | `0x5a09Cc328fA6bB32f3d6fC54906106ddD49a2D7c` |
-| Adaptor | `0x588F07b52E50E8600F654c63176818403F6E3EB6` |
+| Adaptor          | `0x588F07b52E50E8600F654c63176818403F6E3EB6` |
 
 #### OP Sepolia
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0xADAb5CaB352fb1eBF24CD951de224f9e952C82Ed` |
-| Verifier | `0xD19b79cE0C2821158aDBDEf9cC8c8D858c9ef0Cc` |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0xADAb5CaB352fb1eBF24CD951de224f9e952C82Ed` |
+| Verifier         | `0xD19b79cE0C2821158aDBDEf9cC8c8D858c9ef0Cc` |
 | LiquidityManager | `0x5a09Cc328fA6bB32f3d6fC54906106ddD49a2D7c` |
-| Adaptor | `0x588F07b52E50E8600F654c63176818403F6E3EB6` |
+| Adaptor          | `0x588F07b52E50E8600F654c63176818403F6E3EB6` |
 
 #### Base Sepolia
 
-| コントラクト | アドレス |
-|----------|---------|
-| Hub | `0xD18b503B335656C05dC516366C0C8FD6e3b13856` |
+| コントラクト | アドレス                                         |
+| ------ | -------------------------------------------- |
+| Hub    | `0xD18b503B335656C05dC516366C0C8FD6e3b13856` |
 
 > Hub のみ — このチェーンには zERC20 / Verifier / LiquidityManager / Adaptor コントラクトは配備されていません。
 
----
+***
 
 ### zUSDC
 
@@ -163,40 +167,40 @@
 
 #### Sepolia
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0x132CeD517327C2aC5073ACEb9eCF1e7783feCbcF` |
-| Verifier | `0xb199A85463Bc5c0009c058E80b8A0d3D5e0025D6` |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0x132CeD517327C2aC5073ACEb9eCF1e7783feCbcF` |
+| Verifier         | `0xb199A85463Bc5c0009c058E80b8A0d3D5e0025D6` |
 | LiquidityManager | `0xB9f41F93882c2ddC212a4EcC776BBd9D97D2F3C6` |
-| Adaptor | `0xC14A0a1381e455f89a31eDB00F562F5a6F8780Ad` |
+| Adaptor          | `0xC14A0a1381e455f89a31eDB00F562F5a6F8780Ad` |
 
 #### Arbitrum Sepolia
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0x132CeD517327C2aC5073ACEb9eCF1e7783feCbcF` |
-| Verifier | `0xb199A85463Bc5c0009c058E80b8A0d3D5e0025D6` |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0x132CeD517327C2aC5073ACEb9eCF1e7783feCbcF` |
+| Verifier         | `0xb199A85463Bc5c0009c058E80b8A0d3D5e0025D6` |
 | LiquidityManager | `0xB9f41F93882c2ddC212a4EcC776BBd9D97D2F3C6` |
-| Adaptor | `0xC14A0a1381e455f89a31eDB00F562F5a6F8780Ad` |
+| Adaptor          | `0xC14A0a1381e455f89a31eDB00F562F5a6F8780Ad` |
 
 #### OP Sepolia
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0x132CeD517327C2aC5073ACEb9eCF1e7783feCbcF` |
-| Verifier | `0xb199A85463Bc5c0009c058E80b8A0d3D5e0025D6` |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0x132CeD517327C2aC5073ACEb9eCF1e7783feCbcF` |
+| Verifier         | `0xb199A85463Bc5c0009c058E80b8A0d3D5e0025D6` |
 | LiquidityManager | `0xB9f41F93882c2ddC212a4EcC776BBd9D97D2F3C6` |
-| Adaptor | `0xC14A0a1381e455f89a31eDB00F562F5a6F8780Ad` |
+| Adaptor          | `0xC14A0a1381e455f89a31eDB00F562F5a6F8780Ad` |
 
 #### Base Sepolia
 
-| コントラクト | アドレス |
-|----------|---------|
-| Hub | `0xF64Bd0a90120611b0c941e3eF546f2F82F1eaB44` |
+| コントラクト | アドレス                                         |
+| ------ | -------------------------------------------- |
+| Hub    | `0xF64Bd0a90120611b0c941e3eF546f2F82F1eaB44` |
 
 > Hub のみ — このチェーンには zERC20 / Verifier / LiquidityManager / Adaptor コントラクトは配備されていません。
 
----
+***
 
 ### zBNB
 
@@ -204,59 +208,59 @@
 
 #### Sepolia
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0x28240ADC769046793a139b815dad6618b7Eb2499` |
-| Verifier | `0xb0A159eBF38b8cb539DE40836176d46C717Ff0cd` |
-| LiquidityManager | — |
-| Adaptor | — |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0x28240ADC769046793a139b815dad6618b7Eb2499` |
+| Verifier         | `0xb0A159eBF38b8cb539DE40836176d46C717Ff0cd` |
+| LiquidityManager | —                                            |
+| Adaptor          | —                                            |
 
 #### Arbitrum Sepolia
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0x28240ADC769046793a139b815dad6618b7Eb2499` |
-| Verifier | `0xb0A159eBF38b8cb539DE40836176d46C717Ff0cd` |
-| LiquidityManager | — |
-| Adaptor | — |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0x28240ADC769046793a139b815dad6618b7Eb2499` |
+| Verifier         | `0xb0A159eBF38b8cb539DE40836176d46C717Ff0cd` |
+| LiquidityManager | —                                            |
+| Adaptor          | —                                            |
 
 #### OP Sepolia
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0x28240ADC769046793a139b815dad6618b7Eb2499` |
-| Verifier | `0xb0A159eBF38b8cb539DE40836176d46C717Ff0cd` |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0x28240ADC769046793a139b815dad6618b7Eb2499` |
+| Verifier         | `0xb0A159eBF38b8cb539DE40836176d46C717Ff0cd` |
 | LiquidityManager | `0xD05c2d006841F08826c3C531CC1a0AF997846222` |
-| Adaptor | — |
+| Adaptor          | —                                            |
 
 #### BNB Testnet
 
-| コントラクト | アドレス |
-|----------|---------|
-| zERC20 | `0x28240ADC769046793a139b815dad6618b7Eb2499` |
-| Verifier | `0xb0A159eBF38b8cb539DE40836176d46C717Ff0cd` |
+| コントラクト           | アドレス                                         |
+| ---------------- | -------------------------------------------- |
+| zERC20           | `0x28240ADC769046793a139b815dad6618b7Eb2499` |
+| Verifier         | `0xb0A159eBF38b8cb539DE40836176d46C717Ff0cd` |
 | LiquidityManager | `0xD05c2d006841F08826c3C531CC1a0AF997846222` |
-| Adaptor | — |
+| Adaptor          | —                                            |
 
----
+***
 
 ## ICP Canister ID
 
 Internet Computer 上で暗号化アナウンスの配信と鍵導出を行うステルスメッセージングレイヤーです。
 
-- **Key Manager** — 受信者がステルスペイロードを復号できるよう、VetKD を通じて IBE（Identity-Based Encryption）鍵を導出します
-- **Storage** — 暗号化されたアナウンスと署名済み Invoice を保管します
+* **Key Manager** — 受信者がステルスペイロードを復号できるよう、VetKD を通じて IBE（Identity-Based Encryption）鍵を導出します
+* **Storage** — 暗号化されたアナウンスと署名済み Invoice を保管します
 
 ### Mainnet
 
-| Canister | Principal ID |
-|----------|-------------|
+| Canister    | Principal ID                  |
+| ----------- | ----------------------------- |
 | Key Manager | `ub5gn-myaaa-aaaah-qrs2a-cai` |
-| Storage | `ug4az-baaaa-aaaah-qrs2q-cai` |
+| Storage     | `ug4az-baaaa-aaaah-qrs2q-cai` |
 
 ### Testnet
 
-| Canister | Principal ID |
-|----------|-------------|
+| Canister    | Principal ID                  |
+| ----------- | ----------------------------- |
 | Key Manager | `3gshj-ayaaa-aaaac-a4wfq-cai` |
-| Storage | `46fkw-kqaaa-aaaac-a5a3q-cai` |
+| Storage     | `46fkw-kqaaa-aaaac-a5a3q-cai` |

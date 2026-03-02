@@ -1,15 +1,19 @@
-# コントラクト仕様
+---
+icon: memo-circle-info
+---
+
+# Contract Specification
 
 ## 概要
 
 zERC20 コントラクトシステムは以下で構成されます：
 
-- **zERC20**：プライバシー機能を備えた ERC-20 トークン
-- **Verifier**：Proof 検証と Teleport の実行
-- **Hub**：クロスチェーンルートの集約
-- **LiquidityManager**：流動性の入出金ポリシー管理
-- **Adaptor**：Stargate 経由のクロスチェーン出金
-- **Fee Manager**（オフチェーン）：流動性ターゲットの動的調整
+* **zERC20**：プライバシー機能を備えた ERC-20 トークン
+* **Verifier**：Proof 検証と Teleport の実行
+* **Hub**：クロスチェーンルートの集約
+* **LiquidityManager**：流動性の入出金ポリシー管理
+* **Adaptor**：Stargate 経由のクロスチェーン出金
+* **Fee Manager**（オフチェーン）：流動性ターゲットの動的調整
 
 ## zERC20
 
@@ -19,9 +23,9 @@ ZKP（Zero-Knowledge Proof）検証のためにすべての転送をハッシュ
 
 ### 主な機能
 
-- すべての転送に対して `IndexedTransfer(index, from, to, value)` イベントを発行
-- SHA-256 の切り捨てハッシュチェーンを維持：`hashChain = SHA256(hashChain || from || to || value)[0:248]`
-- Verifier が起動する Mint のために `teleport` を公開
+* すべての転送に対して `IndexedTransfer(index, from, to, value)` イベントを発行
+* SHA-256 の切り捨てハッシュチェーンを維持：`hashChain = SHA256(hashChain || from || to || value)[0:248]`
+* Verifier が起動する Mint のために `teleport` を公開
 
 ### 関数
 
@@ -43,8 +47,8 @@ event Teleport(address indexed to, uint256 value);
 
 ### 制約
 
-- すべての転送量は ≤ 2^248 - 1 でなければならない（BN254 スカラーフィールドに収まる必要がある）
-- 超過した場合は `ValueTooLarge` でリバート
+* すべての転送量は ≤ 2^248 - 1 でなければならない（BN254 スカラーフィールドに収まる必要がある）
+* 超過した場合は `ValueTooLarge` でリバート
 
 ## Verifier
 
@@ -113,8 +117,7 @@ struct GeneralRecipient {
 
 ### 緊急時の対応
 
-Proof の不整合（同一インデックスに対してルートが一致しない）が検出された場合、コントラクトは自動的に停止します。
-再開するにはオーナーが検証者をローテートし、`deactivateEmergency` を呼び出す必要があります。
+Proof の不整合（同一インデックスに対してルートが一致しない）が検出された場合、コントラクトは自動的に停止します。 再開するにはオーナーが検証者をローテートし、`deactivateEmergency` を呼び出す必要があります。
 
 ## Hub
 
@@ -124,9 +127,9 @@ Proof の不整合（同一インデックスに対してルートが一致し�
 
 ### 主な機能
 
-- LayerZero 経由ですべてのチェーンの Verifier からルートを受信
-- Poseidon ツリー（最大 64 リーフ）に集約
-- グローバルルートをすべての Verifier にブロードキャスト
+* LayerZero 経由ですべてのチェーンの Verifier からルートを受信
+* Poseidon ツリー（最大 64 リーフ）に集約
+* グローバルルートをすべての Verifier にブロードキャスト
 
 ### 関数
 
@@ -169,9 +172,9 @@ event AggregationRootUpdated(
 
 ### 主な機能
 
-- 原資産トークンを zERC20 に Wrap
-- zERC20 を原資産トークンに Unwrap
-- 流動性ターゲットに基づいたインセンティブ手数料の適用
+* 原資産トークンを zERC20 に Wrap
+* zERC20 を原資産トークンに Unwrap
+* 流動性ターゲットに基づいたインセンティブ手数料の適用
 
 ### 関数
 
@@ -191,9 +194,9 @@ function quoteUnwrapFee(uint256 amount) external view returns (uint256 feeAmount
 
 線形インセンティブ密度：`density(x) = k * (1 - x / T)`（`x < T` の場合）
 
-- ターゲット未満：Wrap に報酬、Unwrap に手数料を適用
-- ターゲット以上：報酬・手数料なし
-- 手数料は `feeSurplus` に蓄積され、将来のインセンティブとして使用
+* ターゲット未満：Wrap に報酬、Unwrap に手数料を適用
+* ターゲット以上：報酬・手数料なし
+* 手数料は `feeSurplus` に蓄積され、将来のインセンティブとして使用
 
 ## Fee Manager
 
@@ -227,23 +230,24 @@ struct FeeParams {
 }
 ```
 
-- `targetLiquidity`：Wrap 報酬と Unwrap 手数料がゼロに近づく流動性レベル
-- `k`：インセンティブカーブの傾きを制御（値が高いほど、流動性がターゲットから乖離した際のインセンティブが強くなる）
+* `targetLiquidity`：Wrap 報酬と Unwrap 手数料がゼロに近づく流動性レベル
+* `k`：インセンティブカーブの傾きを制御（値が高いほど、流動性がターゲットから乖離した際のインセンティブが強くなる）
 
 ### 設定
 
-| 変数 | デフォルト | 説明 |
-|------|----------|------|
-| `FEE_MANAGER_PRIVATE_KEY` | — | 各 LiquidityManager の `FEE_MANAGER_ROLE` を持つ秘密鍵 |
-| `FEE_MANAGER_INTERVAL_SECS` | `3600` | 更新間隔（秒） |
-| `FEE_MANAGER_K_BPS` | `1000` | インセンティブ係数 k（ベーシスポイント、1000 = 10%） |
-| `FEE_MANAGER_TARGET_RATIO_BPS` | `8000` | ターゲット流動性比率（ベーシスポイント、8000 = 80%） |
+| 変数                             | デフォルト  | 説明                                             |
+| ------------------------------ | ------ | ---------------------------------------------- |
+| `FEE_MANAGER_PRIVATE_KEY`      | —      | 各 LiquidityManager の `FEE_MANAGER_ROLE` を持つ秘密鍵 |
+| `FEE_MANAGER_INTERVAL_SECS`    | `3600` | 更新間隔（秒）                                        |
+| `FEE_MANAGER_K_BPS`            | `1000` | インセンティブ係数 k（ベーシスポイント、1000 = 10%）               |
+| `FEE_MANAGER_TARGET_RATIO_BPS` | `8000` | ターゲット流動性比率（ベーシスポイント、8000 = 80%）                |
 
 ### ネイティブトークンのサポート
 
 Fee Manager は LiquidityManager がネイティブ ETH を使用しているか ERC20 を使用しているかを自動的に検出します：
-- **ネイティブ ETH**：ERC-7528 センチネルアドレス `0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE` で検出
-- **ERC20**：原資産トークンの `balanceOf()` で残高を取得
+
+* **ネイティブ ETH**：ERC-7528 センチネルアドレス `0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE` で検出
+* **ERC20**：原資産トークンの `balanceOf()` で残高を取得
 
 ### 権限
 
@@ -288,7 +292,7 @@ liquidityManager.grantRole(FEE_MANAGER_ROLE, feeManagerAddress);
 
 ## セキュリティに関する注記
 
-- **値の範囲**：すべての値を 248 ビット制限で検証
-- **二重支払い防止**：`totalTeleported` が受信者ごとの累積 Mint 量を追跡
-- **LayerZero セキュリティ**：既知のエンドポイントからのメッセージのみ受け付ける
-- **アップグレードの安全性**：UUPS パターンとオーナー専用アップグレードを採用
+* **値の範囲**：すべての値を 248 ビット制限で検証
+* **二重支払い防止**：`totalTeleported` が受信者ごとの累積 Mint 量を追跡
+* **LayerZero セキュリティ**：既知のエンドポイントからのメッセージのみ受け付ける
+* **アップグレードの安全性**：UUPS パターンとオーナー専用アップグレードを採用

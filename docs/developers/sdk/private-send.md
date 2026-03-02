@@ -1,3 +1,7 @@
+---
+icon: toilet-paper-check
+---
+
 # プライベート送信
 
 このページでは、SDK を使ったプライベート zERC20 転送（Private Transfer）の各ステップを詳しく説明します。
@@ -49,30 +53,30 @@ const preparation = await preparePrivateSend({
 
 `preparePrivateSend` は `PreparePrivateSendParams` オブジェクトを受け取ります：
 
-| フィールド | 型 | 必須 | 説明 |
-|-------|------|----------|-------------|
-| `client` | `StealthCanisterClient` | 必須 | `sdk.createStealthClient()` で作成した ICP ステルスクライアント |
-| `recipientAddress` | `string` | 必須 | 受信者の EVM アドレス |
-| `recipientChainId` | `number \| bigint` | 必須 | 受信者が請求するチェーン ID |
-| `seedHex` | `string` | 必須 | 32 バイトの hex 文字列（ステップ1のウォレット署名を `keccak256` したもの） |
-| `paymentAdviceIdHex` | `string` | オプション | 支払い通知の識別子 |
-| `vetkdKeyIdName` | `string` | オプション | VetKD キー ID 名のオーバーライド |
+| フィールド                | 型                       | 必須    | 説明                                               |
+| -------------------- | ----------------------- | ----- | ------------------------------------------------ |
+| `client`             | `StealthCanisterClient` | 必須    | `sdk.createStealthClient()` で作成した ICP ステルスクライアント |
+| `recipientAddress`   | `string`                | 必須    | 受信者の EVM アドレス                                    |
+| `recipientChainId`   | `number \| bigint`      | 必須    | 受信者が請求するチェーン ID                                  |
+| `seedHex`            | `string`                | 必須    | 32 バイトの hex 文字列（ステップ1のウォレット署名を `keccak256` したもの） |
+| `paymentAdviceIdHex` | `string`                | オプション | 支払い通知の識別子                                        |
+| `vetkdKeyIdName`     | `string`                | オプション | VetKD キー ID 名のオーバーライド                            |
 
 ### 戻り値
 
 `preparePrivateSend` は `PreparedPrivateSend` オブジェクトを返します：
 
-| フィールド | 型 | 説明 |
-|-------|------|-------------|
-| `burnAddress` | `string` | zERC20 を送金する決定論的アドレス |
-| `burnPayload` | `Uint8Array` | シリアライズされたバーンデータ |
-| `secret` | `bigint` | バーンアドレスにバインドされたランダムな secret |
-| `tweak` | `bigint` | Poseidon 導出の tweak 値 |
-| `generalRecipient` | `string` | 汎用化された受信者識別子 |
-| `announcement` | `object` | 送信準備が完了した暗号化アナウンス |
-| `sessionKey` | `Uint8Array` | 一時的なセッションキー |
-| `paymentAdviceId` | `string` | 解決済みの支払い通知識別子 |
-| `paymentAdviceIdBytes` | `Uint8Array` | バイト配列形式の支払い通知識別子 |
+| フィールド                  | 型            | 説明                          |
+| ---------------------- | ------------ | --------------------------- |
+| `burnAddress`          | `string`     | zERC20 を送金する決定論的アドレス        |
+| `burnPayload`          | `Uint8Array` | シリアライズされたバーンデータ             |
+| `secret`               | `bigint`     | バーンアドレスにバインドされたランダムな secret |
+| `tweak`                | `bigint`     | Poseidon 導出の tweak 値        |
+| `generalRecipient`     | `string`     | 汎用化された受信者識別子                |
+| `announcement`         | `object`     | 送信準備が完了した暗号化アナウンス           |
+| `sessionKey`           | `Uint8Array` | 一時的なセッションキー                 |
+| `paymentAdviceId`      | `string`     | 解決済みの支払い通知識別子               |
+| `paymentAdviceIdBytes` | `Uint8Array` | バイト配列形式の支払い通知識別子            |
 
 ### シグネチャ
 
@@ -122,11 +126,11 @@ const result = await submitPrivateSendAnnouncement({
 
 `submitPrivateSendAnnouncement` は `SubmitPrivateSendParams` オブジェクトを受け取ります：
 
-| フィールド | 型 | 必須 | 説明 |
-|-------|------|----------|-------------|
-| `client` | `StealthCanisterClient` | 必須 | ICP ステルスクライアント |
-| `preparation` | `PreparedPrivateSend` | 必須 | `preparePrivateSend()` の戻り値 |
-| `tag` | `string` | オプション | アナウンスのフィルタリング用タグ |
+| フィールド         | 型                       | 必須    | 説明                          |
+| ------------- | ----------------------- | ----- | --------------------------- |
+| `client`      | `StealthCanisterClient` | 必須    | ICP ステルスクライアント              |
+| `preparation` | `PreparedPrivateSend`   | 必須    | `preparePrivateSend()` の戻り値 |
+| `tag`         | `string`                | オプション | アナウンスのフィルタリング用タグ            |
 
 ### 戻り値
 
@@ -216,18 +220,18 @@ console.log("Private send complete:", result);
 
 ## エラーハンドリング
 
-| エラー | 原因 | 対処法 |
-|-------|-------|------------|
-| `SeedSignatureRejected` | ユーザーがウォレットの署名プロンプトを拒否 | 再度サインを促す。seed メッセージは決定論的で安全に署名できます |
-| `BurnAddressPoWFailed` | 導出したバーンアドレスの Proof-of-Work チェックが失敗 | `preparePrivateSend()` を再試行 — 新しい secret がサンプリングされます |
-| `StealthClientNotConnected` | `createStealthClient()` が呼ばれていないか、ICP エージェントに接続できない | ICP エージェントのホストと canister ID を確認する |
-| `AnnouncementSubmissionFailed` | ICP ストレージ canister がアナウンスを拒否 | canister が利用可能でアナウンスペイロードが正しい形式であることを確認する |
-| `InsufficientBalance` | 送信者が送信元チェーンに十分な zERC20 を保有していない | `LiquidityManager.wrap()` でより多くの原資産トークンを Wrap するか、別チェーンからブリッジする |
-| `TransactionReverted` | ERC-20 `transfer` 呼び出しがオンチェーンでリバート | トークンの承認・残高・バーンアドレスの有効性を確認する |
+| エラー                            | 原因                                                  | 対処法                                                             |
+| ------------------------------ | --------------------------------------------------- | --------------------------------------------------------------- |
+| `SeedSignatureRejected`        | ユーザーがウォレットの署名プロンプトを拒否                               | 再度サインを促す。seed メッセージは決定論的で安全に署名できます                              |
+| `BurnAddressPoWFailed`         | 導出したバーンアドレスの Proof-of-Work チェックが失敗                  | `preparePrivateSend()` を再試行 — 新しい secret がサンプリングされます            |
+| `StealthClientNotConnected`    | `createStealthClient()` が呼ばれていないか、ICP エージェントに接続できない | ICP エージェントのホストと canister ID を確認する                               |
+| `AnnouncementSubmissionFailed` | ICP ストレージ canister がアナウンスを拒否                        | canister が利用可能でアナウンスペイロードが正しい形式であることを確認する                       |
+| `InsufficientBalance`          | 送信者が送信元チェーンに十分な zERC20 を保有していない                     | `LiquidityManager.wrap()` でより多くの原資産トークンを Wrap するか、別チェーンからブリッジする |
+| `TransactionReverted`          | ERC-20 `transfer` 呼び出しがオンチェーンでリバート                  | トークンの承認・残高・バーンアドレスの有効性を確認する                                     |
 
 ## 関連ページ
 
-- [SDK クイックスタート](quickstart.md) — インストールとはじめの一歩
-- [受け取り](receiving.md) — アナウンスの Scan と資金の請求
-- [アーキテクチャ概要](../architecture.md) — システムレベルの設計
-- [ZKP 仕様](../specs/zkp-spec.md) — Nova と Groth16 Proof の詳細
+* [SDK クイックスタート](quickstart.md) — インストールとはじめの一歩
+* [受け取り](receiving.md) — アナウンスの Scan と資金の請求
+* [アーキテクチャ概要](../architecture.md) — システムレベルの設計
+* [ZKP 仕様](../specs/zkp-spec.md) — Nova と Groth16 Proof の詳細

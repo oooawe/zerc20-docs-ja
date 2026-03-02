@@ -1,3 +1,7 @@
+---
+icon: head-side-circuit
+---
+
 # Proof of Innocence（予定）
 
 > **⚠️ Warning：** 未実装の機能です。このページは計画中の機能を説明しています。以下のインターフェースと設計は変更される可能性があり、現時点では使用できません。
@@ -6,12 +10,12 @@ Proof of Innocence は AMLポリシーとして機能するオフチェーンの
 
 ## 概要
 
-| プロパティ | 説明 |
-|----------|-------------|
-| **目的** | 送信者アドレスが制裁リストに含まれていないことを証明 |
-| **証明システム** | Groth16（単体 Proof） / Nova（集約） |
-| **検証方法** | オフチェーン CLI Verifier |
-| **データ構造** | 制裁リスト用 Sparse Merkle Tree（SMT） |
+| プロパティ      | 説明                             |
+| ---------- | ------------------------------ |
+| **目的**     | 送信者アドレスが制裁リストに含まれていないことを証明     |
+| **証明システム** | Groth16（単体 Proof） / Nova（集約）   |
+| **検証方法**   | オフチェーン CLI Verifier            |
+| **データ構造**  | 制裁リスト用 Sparse Merkle Tree（SMT） |
 
 ## 仕組み
 
@@ -60,19 +64,23 @@ leaf = poseidon2(start, end)
 `recipient` ごとの `totalTeleported` が制裁対象から由来しないことを証明するために、各転送で送信者（`transfer_leaf.from`）が OFACリストに含まれていないことを証明します。
 
 **パブリック入力（全ステップで共通）：**
+
 1. `ofac_root` — OFAC 非メンバーシップツリーの Root
 2. `recipient` — GeneralRecipient のハッシュ
 
 **アキュムレータ状態：**
+
 1. `totalTeleported` — 転送金額の累計
 
 **ステップごとのプライベート入力：**
+
 1. `from_address` — この転送の送信者（`transfer_leaf.from`）
 2. `value` — 転送金額
 3. `start`、`end` — `from_address` を含むギャップの境界値
 4. `path`、`position` — ギャップの Merkle Proof
 
 **ステップごとの制約：**
+
 1. **送信者が制裁対象外**：`start < from_address < end` を `ofac_root` に対して検証
 2. **金額の累計**：`totalTeleported_new = totalTeleported_old + value`
 
@@ -94,13 +102,13 @@ zerc20-cli proof-of-innocence generate \
   --output <PROOF_OUTPUT_PATH>
 ```
 
-| 引数 | 説明 |
-|----------|-------------|
-| `--recipient` | GeneralRecipient のハッシュ（引き出しフローから取得） |
-| `--ofac-root` | 信頼できる OFAC 除外ツリーの Root |
-| `--transfers-file` | （from_address、value）ペアのリストを含む JSON ファイル |
-| `--exclusion-proofs-file` | OFACツリーサービスからの除外 Proof を含む JSON ファイル |
-| `--output` | 生成した Proof の出力パス |
+| 引数                        | 説明                                       |
+| ------------------------- | ---------------------------------------- |
+| `--recipient`             | GeneralRecipient のハッシュ（引き出しフローから取得）      |
+| `--ofac-root`             | 信頼できる OFAC 除外ツリーの Root                   |
+| `--transfers-file`        | （from\_address、value）ペアのリストを含む JSON ファイル |
+| `--exclusion-proofs-file` | OFACツリーサービスからの除外 Proof を含む JSON ファイル     |
+| `--output`                | 生成した Proof の出力パス                         |
 
 ### Proof of Innocence を検証する
 
@@ -113,12 +121,12 @@ zerc20-cli proof-of-innocence verify \
   --ofac-root <OFAC_TREE_ROOT>
 ```
 
-| 引数 | 説明 |
-|----------|-------------|
-| `--proof` | Proof ファイルのパス |
-| `--recipient` | 期待される受信者ハッシュ |
-| `--total-teleported` | 期待される合計金額（wei） |
-| `--ofac-root` | 信頼できる OFAC 除外ツリーの Root |
+| 引数                   | 説明                     |
+| -------------------- | ---------------------- |
+| `--proof`            | Proof ファイルのパス          |
+| `--recipient`        | 期待される受信者ハッシュ           |
+| `--total-teleported` | 期待される合計金額（wei）         |
+| `--ofac-root`        | 信頼できる OFAC 除外ツリーの Root |
 
 ### 使用例
 
