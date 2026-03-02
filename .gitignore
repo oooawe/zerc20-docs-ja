@@ -144,8 +144,5 @@ vite.config.ts.timestamp-*
 # etc
 tree.md
 skill.md
-
-# GitBook
-.gitbook/*
 .gitmessage.txt
 
