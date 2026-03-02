@@ -1,4 +1,4 @@
-root: ./ja/
+root: ./docs/
 structure:
 readme: README.md
 summary: SUMMARY.md
