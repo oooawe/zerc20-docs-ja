@@ -1,4 +1,4 @@
-# Table of contents
+# Summary
 
 ## 概要
 
@@ -9,7 +9,7 @@
 
 * [フロントエンドを使う](users/frontend/getting-started.md)
   * [プライベート転送](users/frontend/private-transfer.md)
-  * [Scan で受け取りを確認する](users/frontend/scan-receives.md)
+  * [受け取りの確認](users/frontend/scan-receives.md)
 * [CLI を使う](users/cli/getting-started.md)
 * [手数料とリワード](users/fees-and-rewards.md)
 * [FAQ](users/faq.md)
@@ -41,3 +41,4 @@
 * [サポート](reference/support.md)
 * [用語集](reference/glossary.md)
 * [プライバシーポリシー](reference/privacy-policy.md)
+
