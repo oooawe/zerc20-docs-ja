@@ -9,9 +9,8 @@ Source/Reference: https://zerc20.io
 <defs>
 <linearGradient id="zBaseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
 <stop offset="0%" stop-color="#007D7D"/>
-<stop offset="42%" stop-color="#169090"/>
-<stop offset="56%" stop-color="#4DB0B0"/>
-<stop offset="100%" stop-color="#006666"/>
+<stop offset="50%" stop-color="#4DB0B0"/>
+<stop offset="100%" stop-color="#003333"/>
 </linearGradient>
 
 <linearGradient id="zGhostGradient" x1="0%" y1="0%" x2="100%" y2="100%">
