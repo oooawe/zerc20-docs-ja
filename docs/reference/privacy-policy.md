@@ -1,3 +1,7 @@
+---
+icon: shield keyhole
+---
+
 # Privacy Policy
 
 当サイトは、技術文書の日本語での公開を目的として運営しています。

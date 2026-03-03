@@ -40,3 +40,4 @@
 * [外部リンク](reference/links.md)
 * [サポート](reference/support.md)
 * [用語集](reference/glossary.md)
+* [プライバシーポリシー](reference/privacy-policy.md)
