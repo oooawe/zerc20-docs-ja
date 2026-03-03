@@ -1,5 +1,5 @@
 ---
-icon: github-alt
+icon: chart-network
 ---
 
 # zERC20 の仕組み
@@ -8,7 +8,7 @@ icon: github-alt
 
 ## プライベート転送の流れ
 
-<div align="center"><img src="../assets/design/burn_address.png" alt="Burn Address Flow" width="440"></div>
+<div align="center"><img src="../assets/design/burn_address.png" alt="" width="440"></div>
 
 ### ステップ1：バーンアドレスを生成する
 
