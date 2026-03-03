@@ -1,5 +1,5 @@
 ---
-icon: shield keyhole
+icon: shield-keyhole
 ---
 
 # Privacy Policy
