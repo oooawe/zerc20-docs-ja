@@ -8,9 +8,8 @@ Source/Reference: https://zerc20.io
 <svg id="zMark" data-name="zMark" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 180 180">
 <defs>
 <linearGradient id="zBaseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" stop-color="#25c97f"/>
-<stop offset="42%" stop-color="#63f4bc"/>
-<stop offset="56%" stop-color="#b8ffe7"/>
+<stop offset="0%" stop-color="#55cc88"/>
+<stop offset="40%" stop-color="#55cc88"/>
 <stop offset="100%" stop-color="#128454"/>
 </linearGradient>
 
@@ -50,50 +49,49 @@ Source/Reference: https://zerc20.io
 </defs>
 
 <g id="teleportScene">
-
 <use id="zBase" href="#zShape" fill="url(#zBaseGradient)">
-<animate attributeName="opacity" dur="10.2s" repeatCount="indefinite"
-keyTimes="0;0.12;0.24;0.36;0.48;0.60;0.72;0.82;0.88;0.91;0.94;0.955;0.97;0.982;0.992;0.997;1"
-values="1;1;1;1;1;1;1;1;0.92;0.22;0;0;0.15;0.85;1;1;1"/>
-<animateTransform attributeName="transform" type="translate" additive="sum" dur="10.2s" repeatCount="indefinite"
-keyTimes="0;0.12;0.24;0.36;0.48;0.60;0.72;0.82;0.88;0.91;0.94;0.955;0.97;0.982;0.992;0.997;1"
-values="0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;2 -1;5 -2;4 -2;1 0;0 0;0 0;0 0;0 0"/>
-<animateTransform attributeName="transform" type="scale" additive="sum" dur="10.2s" repeatCount="indefinite"
-keyTimes="0;0.12;0.24;0.36;0.48;0.60;0.72;0.82;0.88;0.91;0.94;0.955;0.97;0.982;0.992;0.997;1"
-values="1 1;1 1;1 1;1 1;1 1;1 1;1 1;1 1;1.01 1.01;0.985 0.985;0.96 0.96;0.975 0.975;1.01 1.01;1 1;1 1;1 1;1 1"/>
+<animate attributeName="opacity" dur="18s" repeatCount="indefinite"
+keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
+values="1;1;0.92;0.18;0;0;0.15;1;1"/>
+<animateTransform attributeName="transform" type="translate" additive="sum" dur="18s" repeatCount="indefinite"
+keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
+values="0 0;0 0;0 0;2 -1;5 -2;4 -2;1 0;0 0;0 0"/>
+<animateTransform attributeName="transform" type="scale" additive="sum" dur="18s" repeatCount="indefinite"
+keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
+values="1 1;1 1;1.01 1.01;0.985 0.985;0.96 0.96;0.975 0.975;1.01 1.01;1 1;1 1"/>
 </use>
 
-<use id="zGhost" href="#zShape" fill="url(#zGhostGradient)" opacity="0" filter="url(#flashGlow)">
-<animate attributeName="opacity" dur="10.2s" repeatCount="indefinite"
-keyTimes="0;0.12;0.24;0.36;0.48;0.60;0.72;0.82;0.88;0.91;0.94;0.955;0.97;0.982;0.992;0.997;1"
-values="0;0;0;0;0;0;0;0;0.1;0.9;0.55;0.08;0;0;0;0;0"/>
-<animateTransform attributeName="transform" type="translate" dur="10.2s" repeatCount="indefinite"
-keyTimes="0;0.12;0.24;0.36;0.48;0.60;0.72;0.82;0.88;0.91;0.94;0.955;0.97;0.982;0.992;0.997;1"
-values="0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;-2 1;-8 3;-12 4;-6 2;0 0;0 0;0 0;0 0"/>
-<animateTransform attributeName="transform" type="skewX" additive="sum" dur="10.2s" repeatCount="indefinite"
-keyTimes="0;0.12;0.24;0.36;0.48;0.60;0.72;0.82;0.88;0.91;0.94;0.955;0.97;0.982;0.992;0.997;1"
-values="0;0;0;0;0;0;0;0;0;4;8;2;0;0;0;0;0"/>
+<use id="zGhost" href="#zShape" fill="url(#zGhostGradient)" opacity="1" filter="url(#flashGlow)">
+<animate attributeName="opacity" dur="18s" repeatCount="indefinite"
+keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
+values="0;0;0.1;0.9;0.55;0;0;0;0"/>
+<animateTransform attributeName="transform" type="translate" dur="18s" repeatCount="indefinite"
+keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
+values="0 0;0 0;0 0;-2 1;-12 4;-6 2;0 0;0 0;0 0"/>
+<animateTransform attributeName="transform" type="skewX" additive="sum" dur="18s" repeatCount="indefinite"
+keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
+values="0;0;0;8;2;0;0;0;0"/>
 </use>
 
 <use id="zFlash" href="#zShape" fill="#ffffff" opacity="0" filter="url(#flashGlow)">
-<animate attributeName="opacity" dur="10.2s" repeatCount="indefinite"
-keyTimes="0;0.12;0.24;0.36;0.48;0.60;0.72;0.82;0.88;0.91;0.94;0.955;0.97;0.982;0.992;0.997;1"
-values="0;0;0;0;0;0;0;0;0.18;1;0.35;0;0;0;0;0;0"/>
-<animateTransform attributeName="transform" type="translate" dur="10.2s" repeatCount="indefinite"
-keyTimes="0;0.12;0.24;0.36;0.48;0.60;0.72;0.82;0.88;0.91;0.94;0.955;0.97;0.982;0.992;0.997;1"
-values="0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;1 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0"/>
+<animate attributeName="opacity" dur="18s" repeatCount="indefinite"
+keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
+values="0;0;0.18;1;0.35;0;0;0;0"/>
+<animateTransform attributeName="transform" type="translate" dur="18s" repeatCount="indefinite"
+keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
+values="0 0;0 0;0 0;1 0;0 0;0 0;0 0;0 0;0 0"/>
 </use>
 
 <g id="scanLines" opacity="0">
 <rect x="8" y="44" width="164" height="5" rx="2.5" fill="#b8fff0"/>
 <rect x="14" y="85" width="152" height="4" rx="2" fill="#dffff7"/>
 <rect x="6" y="122" width="168" height="6" rx="3" fill="#90ffe0"/>
-<animate attributeName="opacity" dur="10.2s" repeatCount="indefinite"
-keyTimes="0;0.12;0.24;0.36;0.48;0.60;0.72;0.82;0.88;0.91;0.94;0.955;0.97;0.982;0.992;0.997;1"
-values="0;0;0;0;0;0;0;0;0;0.95;0.35;0;0;0;0;0;0"/>
-<animateTransform attributeName="transform" type="translate" dur="10.2s" repeatCount="indefinite"
-keyTimes="0;0.12;0.24;0.36;0.48;0.60;0.72;0.82;0.88;0.91;0.94;0.955;0.97;0.982;0.992;0.997;1"
-values="0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;0 0;8 0;18 0;22 0;0 0;0 0;0 0;0 0;0 0"/>
+<animate attributeName="opacity" dur="18s" repeatCount="indefinite"
+keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
+values="0;0;0;0.95;0.35;0;0;0;0"/>
+<animateTransform attributeName="transform" type="translate" dur="18s" repeatCount="indefinite"
+keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
+values="0 0;0 0;0 0;8 0;22 0;0 0;0 0;0 0;0 0"/>
 </g>
 </g>
 </svg>

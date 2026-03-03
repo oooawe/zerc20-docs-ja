@@ -49,13 +49,13 @@ zERC20._update() → emits IndexedTransfer → updates hashChain
 
 ### 2. Root の証明
 
-<div align="center"><img src="../.gitbook/assets/merkle_tree.png" alt="Merkle Tree and Hash Chain" width="700"></div>
+<div align="center"><img src="../assets/design/merkle_tree.png" alt="Merkle Tree and Hash Chain" width="700"></div>
 
 Indexer は Poseidon Merkle Tree を管理し、IVC Proof を使って定期的に新しい転送 Root をオンチェーンで証明します。
 
 ### 3. クロスチェーン集約
 
-<div align="center"><img src="../.gitbook/assets/crosschain.png" alt="Cross-chain Architecture" width="700"></div>
+<div align="center"><img src="../assets/design/crosschain.png" alt="Cross-chain Architecture" width="700"></div>
 
 各チェーンの Verifier が転送 Root を Hub にリレーし、Hub はそれらを集約してグローバル Root を全 Verifier にブロードキャストします。
 
