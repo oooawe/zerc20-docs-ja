@@ -1,10 +1,10 @@
 ---
 icon: toilet-paper-check
+description: SDK を使ったプライベート zERC20 転送（Private Transfer）の各ステップの詳細
 ---
 
 # プライベート転送
 
-このページでは、SDK を使ったプライベート zERC20 転送（Private Transfer）の各ステップを詳しく説明します。
 
 ## 仕組み
 

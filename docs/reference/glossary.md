@@ -1,6 +1,6 @@
 ---
-description: zERC20 ドキュメント全体で使用される主要用語解説
 icon: book-open-lines
+description: zERC20 ドキュメント全体で使用される主要用語解説
 ---
 
 # 用語集

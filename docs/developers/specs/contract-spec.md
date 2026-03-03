@@ -1,5 +1,6 @@
 ---
 icon: memo-circle-info
+description: コントラクトシステム概要
 ---
 
 # Contract Specification

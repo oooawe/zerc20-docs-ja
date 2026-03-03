@@ -1,8 +1,9 @@
 ---
 icon: memo-circle-info
+description: Internet Computer Protocol
 ---
 
-# ICP ストレージ
+# ICP canister
 
 ## 概要
 

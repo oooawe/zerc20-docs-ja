@@ -1,5 +1,6 @@
 ---
 icon: toilet-paper-check
+description: SKD
 ---
 
 # 受け取り

@@ -1,10 +1,10 @@
 ---
 icon: brain-circuit
+description: `zerc20-circuit-setup` CLI ツールを使って zERC20 の Circuit アーティファクトをダウンロードしてテストする方法
+
 ---
 
 # Circuit セットアップ
-
-このガイドでは、`zerc20-circuit-setup` CLI ツールを使って zERC20 の Circuit アーティファクトをダウンロードしてテストする方法を説明します。
 
 ## Circuit Artifacts が必要な理由
 

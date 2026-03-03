@@ -1,10 +1,14 @@
 ---
 icon: link
+description: ドキュメント全体で参照している外部 URL 一覧
 ---
 
 # 外部リンク
 
-ドキュメント全体で参照している外部 URL の一覧です。URL が変更された場合はこのページを更新してください。
+{% hint style="info" %}
+URL が変更された場合はページ更新依頼のコメントを送信してください
+{% endhint %}
+
 
 ## アプリケーション
 
@@ -25,7 +29,7 @@ icon: link
 
 | 名称     | URL                                          | 説明          |
 | ------ | -------------------------------------------- | ----------- |
-| INTMAX 高校 |  [ INTMAX High School （fictional）](https://discord.com/invite/5vTJzW3Zxy) | Start your INTMAX High School life here!  |
+| INTMAX High School | https://discord.com/invite/5vTJzW3Zxy | INTMAX高校でのキャンパスライフ  |
 
 ## サポート
 

@@ -1,18 +1,17 @@
 ---
 icon: browser
+description: zERC20 ウェブアプリを使った Private Transfer（Private Send） の受け取り方法
 ---
 
-# Scan で受け取りを確認する
+# Scan for Receiveで受け取りを確認する
 
-このガイドでは、zERC20 ウェブアプリを使ったプライベート転送（Private Transfer）の受け取り方法を説明します。
-
-## プライベート受け取りにアクセスする
+## Private Receive にアクセスする
 
 1. [フロントエンド](https://app.zerc20.io/) にアクセス
 2. ウォレットを接続
 3. 「Private Receive」タブをクリック
 
-<figure><img src="../../assets/frontend/private-receive-tab.png" alt="Private Receive Tab" width="600"><figcaption><p>Private Receive タブ</p></figcaption></figure>
+<img src="../../assets/frontend/private-receive-tab.png" alt="" width="600">
 
 ## 受信転送を Scan する
 
@@ -21,7 +20,7 @@ icon: browser
 1. 「Scan for Receive」ボタンをクリック
 2. システムが view key を要求し、アナウンスを Scan します
 
-<figure><img src="../../assets/frontend/scanning-progress.png" alt="Scanning Progress" width="520"><figcaption><p>Scan の進行状況</p></figcaption></figure>
+<img src="../../assets/frontend/scanning-progress.png" alt="" width="520">
 
 Scan の処理内容：
 
@@ -34,7 +33,7 @@ Scan の処理内容：
 
 Scan 完了後、受け取った転送がタイムスタンプ順に一覧表示されます：
 
-<figure><img src="../../assets/frontend/announcement-list.png" alt="Announcement List" width="600"><figcaption><p>アナウンス一覧</p></figcaption></figure>
+<img src="../../assets/frontend/announcement-list.png" alt="" width="600">
 
 アナウンスの **+** ボタンをクリックすると詳細が展開されます。
 
@@ -50,7 +49,7 @@ Scan 完了後、受け取った転送がタイムスタンプ順に一覧表示
 
 アナウンスをクリックすると詳細が表示されます：
 
-<figure><img src="../../assets/frontend/announcement-detail.png" alt="Announcement Detail" width="520"><figcaption><p>アナウンス詳細（PENDING 状態）</p></figcaption></figure>
+<img src="../../assets/frontend/announcement-detail.png" alt="" width="520">
 
 詳細画面の表示内容：
 
@@ -67,12 +66,12 @@ Scan 完了後、受け取った転送がタイムスタンプ順に一覧表示
 1. アナウンスを展開する
 2. 「REDEEM」ボタンをクリック
 
-<figure><img src="../../assets/frontend/redeem-detail.png" alt="Redeem Detail" width="520"><figcaption><p>引き出し可能な転送</p></figcaption></figure>
+<img src="../../assets/frontend/redeem-detail.png" alt="" width="520">
 
 3. ZKP（Zero-Knowledge Proof）の生成とトランザクションの完了を待つ（資金の引き出し権限を証明するZKPが作成されます）
 4. 完了するとステータスが **REDEEMED** に変わり、ボタンが「Already Redeemed」と表示されます
 
-<figure><img src="../../assets/frontend/redeem-success.png" alt="Redeem Success" width="520"><figcaption><p>引き出し完了</p></figcaption></figure>
+<img src="../../assets/frontend/redeem-success.png" alt="" width="520">
 
 資金は接続中のウォレットアドレスに送金されます。
 

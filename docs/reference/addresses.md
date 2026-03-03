@@ -1,10 +1,13 @@
 ---
 icon: book
+description: コントラクトアドレス一覧
 ---
 
 # コントラクトアドレス
 
-> **正式な情報源**：`config/deployed/` 配下の JSON ファイルです。このページはそれらから生成されています。不明な点は `config/deployed/mainnet/` または `config/deployed/testnet/` を参照してください。
+{% hint style="warning" %}
+これらのアドレスは必ず公式ドキュメントを参照・確認してください
+{% endhint %}
 
 ## Mainnet
 

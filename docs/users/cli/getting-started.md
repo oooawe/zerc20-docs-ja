@@ -1,15 +1,13 @@
 ---
 icon: rectangle-terminal
+description: zERC20 コマンドラインインターフェース（CLI）のインストールと使い方
 ---
 
 # CLI を使う
 
-このガイドでは、zERC20 コマンドラインインターフェース（CLI）のインストールと使い方を説明します。
-
 ## インストール
 
 ```bash
-
 git clone https://github.com/kbizikav/zerc20.git
 cd zerc20/cli
 cargo install --path
@@ -19,7 +17,6 @@ cargo install --path
 CLI バイナリは `zerc20-cli` としてインストールされます（古いバージョンでは `cli` の場合があります）。リポジトリから直接実行する場合：
 
 ```bash
-
 cd zerc20/cli
 cargo run -r -- <command>
 
@@ -32,7 +29,6 @@ cargo run -r -- <command>
 引き出し証明の生成には Circuit アーティファクトが必要です。CLI を使う前にダウンロードしてください：
 
 ```bash
-
 cargo install --path ../circuit-setup
 zerc20-circuit-setup download --version 1.1.0
 
@@ -68,7 +64,6 @@ Mainnet / Testnet の値については [ICP Canister ID](../../reference/addres
 支払いを受け取るためのバーンアドレス（Burn Address）を生成します：
 
 ```bash
-
 zerc20-cli invoice issue --chain-id <CHAIN_ID>
 
 ```
@@ -78,7 +73,6 @@ zerc20-cli invoice issue --chain-id <CHAIN_ID>
 発行済みの Invoice を表示します：
 
 ```bash
-
 zerc20-cli invoice ls --chain-id <CHAIN_ID>
 
 ```
@@ -88,7 +82,6 @@ zerc20-cli invoice ls --chain-id <CHAIN_ID>
 バーンアドレスに zERC20 を送金します：
 
 ```bash
-
 zerc20-cli transfer
   --chain-id <CHAIN_ID>
   --to <BURN_ADDRESS>
@@ -99,7 +92,6 @@ zerc20-cli transfer
 ### Invoice ステータスを確認する
 
 ```bash
-
 zerc20-cli invoice status --chain-id <CHAIN_ID> --invoice-id <INVOICE_ID>
 
 ```
@@ -109,7 +101,6 @@ zerc20-cli invoice status --chain-id <CHAIN_ID> --invoice-id <INVOICE_ID>
 Proof を生成して引き出しを実行します：
 
 ```bash
-
 zerc20-cli invoice receive --chain-id <CHAIN_ID> --invoice-id <INVOICE_ID>
 
 ```

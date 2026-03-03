@@ -1,10 +1,9 @@
 ---
 icon: memo-circle-info
+description: zERC20 各コンポーネントの詳細な技術仕様
 ---
 
 # 技術仕様
-
-zERC20 各コンポーネントの詳細な技術仕様です。
 
 ## 仕様一覧
 

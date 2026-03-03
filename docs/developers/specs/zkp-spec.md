@@ -1,10 +1,9 @@
 ---
 icon: memo-circle-info
+description: フォールディングガジェット（Folding gadget）
 ---
 
 # ZKP Specification
-
-フォールディングガジェット（Folding gadget）
 
 ## 概要
 

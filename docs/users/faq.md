@@ -1,10 +1,9 @@
 ---
 icon: comments-question-check
+description: よくある質問
 ---
 
 # FAQ
-
-## よくある質問
 
 ### 基本
 

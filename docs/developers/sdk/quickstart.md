@@ -1,10 +1,9 @@
 ---
 icon: toilet-paper-check
+description: `zerc20-client-sdk` を使って TypeScript アプリケーションからプライベート zERC20 転送（Private Transfer）を送信する方法
 ---
 
 # SDK ガイド
-
-`zerc20-client-sdk` を使って TypeScript アプリケーションからプライベート zERC20 転送（Private Transfer）を送信する方法を説明します。
 
 ## 前提条件
 

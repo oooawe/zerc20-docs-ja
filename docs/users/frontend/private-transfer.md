@@ -1,12 +1,11 @@
 ---
 icon: browser
+description: zERC20 ウェブアプリを使った Private Transfer（Private Send）の使用方法
 ---
 
-# プライベート転送
+# Private Transfer
 
-このガイドでは、zERC20 ウェブアプリを使ったプライベート転送（Private Transfer）の送受金方法を説明します。
-
-## プライベート送金を行う
+## プライベート送金（Private Send）を行う
 
 ### アドレスに直接送金する
 
@@ -19,7 +18,7 @@ icon: browser
 5. 送金する zERC20 の金額を入力
 6. 「Send Privately」をクリック
 
-<figure><img src="../../assets/frontend/private-send-form.png" alt="Private Send Form" width="520"><figcaption><p>プライベート送金フォーム</p></figcaption></figure>
+<img src="../../assets/frontend/private-send-form.png" alt="" width="520">
 
 転送は以下の3ステップで処理されます：
 
@@ -27,11 +26,11 @@ icon: browser
 2. **保存**：暗号化アナウンスをオンチェーンまたはオフチェーンに保存（後で受信者が Scan して確認）
 3. **送金**：バーンアドレスにトークンを送信
 
-<figure><img src="../../assets/frontend/transfer-progress.png" alt="Transfer Progress" width="520"><figcaption><p>転送の進行状況</p></figcaption></figure>
+<img src="../../assets/frontend/transfer-progress.png" alt="" width="520">
 
 完了すると成功メッセージが表示されます：
 
-<figure><img src="../../assets/frontend/transfer-success.png" alt="Transfer Success" width="520"><figcaption><p>転送成功</p></figcaption></figure>
+<img src="../../assets/frontend/transfer-success.png" alt="" width="520">
 
 ### バーンアドレスに送金する
 
@@ -58,15 +57,15 @@ icon: browser
 3. **「Pay with mobile」** オプションにチェックを入れる
 4. 「Pay with mobile」をクリック
 
-<figure><img src="../../assets/frontend/pay-with-mobile-form.png" alt="Pay with Mobile Form" width="520"><figcaption><p>Pay with Mobile フォーム</p></figcaption></figure>
+<img src="../../assets/frontend/pay-with-mobile-form.png" alt="" width="520">
 
 5. バーンアドレスを含む QR コードが生成される
 6. 支払い者に QR コードを共有する
 
-<figure><img src="../../assets/frontend/pay-with-mobile-qr.png" alt="Pay with Mobile QR" width="320"><figcaption><p>Pay with Mobile QR コード</p></figcaption></figure>
+<img src="../../assets/frontend/pay-with-mobile-qr.png" alt="" width="320">
 
 支払い者は QR コードをスキャンし、表示されたバーンアドレスに指定の金額を送金するだけです。オンチェーンで支払いが確認されると、受信者が資金を引き出せます。
 
 ## 受け取りと引き出し
 
-プライベート転送の受け取りと引き出しの詳細は [Scan で受け取りを確認する](scan-receives.md) を参照してください。
+プライベート転送の受け取りと引き出しの詳細は [Scan Receive で確認する](scan-receives.md) を参照してください。

@@ -1,5 +1,6 @@
 ---
 icon: hand-holding-hand
+description: サポートチャンネル
 ---
 
 # サポート

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
 Original content & materials: zerc20.io (all rights reserved by respective owner)
 This page is an unofficial Japanese translation / adaptation by awe-lab
 Source/Reference: https://zerc20.io
 -->
 
-<svg id="zMark" data-name="zMark" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 180 180">
+<svg id="zMark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
 <defs>
 <linearGradient id="zBaseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
 <stop offset="0%" stop-color="#007D7D"/>
@@ -19,26 +20,13 @@ Source/Reference: https://zerc20.io
 <stop offset="100%" stop-color="#2D9494"/>
 </linearGradient>
 
-<filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
-<feGaussianBlur in="SourceGraphic" stdDeviation="0.9" result="blur1"/>
-<feColorMatrix in="blur1" type="matrix" values="
-1 0 0 0 0
-0 1 0 0 0
-0 0 1 0 0
-0 0 0 0.18 0" result="glow1"/>
-<feMerge>
-<feMergeNode in="glow1"/>
-<feMergeNode in="SourceGraphic"/>
-</feMerge>
-</filter>
-
 <filter id="flashGlow" x="-60%" y="-60%" width="220%" height="220%">
-<feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="blur2"/>
+<feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="blur2"/>
 <feColorMatrix in="blur2" type="matrix" values="
 1 0 0 0 0
 0 1 0 0 0
 0 0 1 0 0
-0 0 0 0.22 0" result="glow2"/>
+0 0 0 0.18 0" result="glow2"/>
 <feMerge>
 <feMergeNode in="glow2"/>
 <feMergeNode in="SourceGraphic"/>
@@ -49,7 +37,7 @@ Source/Reference: https://zerc20.io
 </defs>
 
 <g id="teleportScene">
-<use id="zBase" href="#zShape" fill="url(#zBaseGradient)" filter="url(#softGlow)">
+<use id="zBase" href="#zShape" fill="url(#zBaseGradient)">
 <animate attributeName="opacity" dur="18s" repeatCount="indefinite"
 keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
 values="1;1;0.92;0.18;0;0;0.15;1;1"/>
@@ -73,10 +61,10 @@ keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
 values="0;0;0;8;2;0;0;0;0"/>
 </use>
 
-<use id="zFlash" href="#zShape" fill="#3F9C9C" opacity="0">
+<use id="zFlash" href="#zShape" fill="#3F9C9C" filter="url(#flashGlow)" opacity="0">
 <animate attributeName="opacity" dur="18s" repeatCount="indefinite"
 keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
-values="0;0;0.04;0.18;0.08;0;0;0;0"/>
+values="0;0;0.03;0.16;0.06;0;0;0;0"/>
 <animateTransform attributeName="transform" type="translate" dur="18s" repeatCount="indefinite"
 keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
 values="0 0;0 0;0 0;1 0;0 0;0 0;0 0;0 0;0 0"/>
