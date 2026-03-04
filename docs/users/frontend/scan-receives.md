@@ -11,7 +11,7 @@ description: zERC20 ウェブアプリを使った Private Transfer（Private Se
 2. ウォレットを接続
 3. 「Private Receive」タブをクリック
 
-<img src="../../assets/frontend/private-receive-tab.png" alt="" width="600">
+<img src="../../assets/frontend/private-receive-tab.png" alt="" width="80%" height="auto">
 
 ## 受信転送を Scan する
 
@@ -20,7 +20,7 @@ description: zERC20 ウェブアプリを使った Private Transfer（Private Se
 1. 「Scan for Receive」ボタンをクリック
 2. システムが view key を要求し、アナウンスを Scan します
 
-<img src="../../assets/frontend/scanning-progress.png" alt="" width="520">
+<img src="../../assets/frontend/scanning-progress.png" alt="" width="80%" height="auto">
 
 Scan の処理内容：
 
@@ -33,7 +33,7 @@ Scan の処理内容：
 
 Scan 完了後、受け取った転送がタイムスタンプ順に一覧表示されます：
 
-<img src="../../assets/frontend/announcement-list.png" alt="" width="600">
+<img src="../../assets/frontend/announcement-list.png" alt="" width="80%" height="auto">
 
 アナウンスの **+** ボタンをクリックすると詳細が展開されます。
 
@@ -49,7 +49,7 @@ Scan 完了後、受け取った転送がタイムスタンプ順に一覧表示
 
 アナウンスをクリックすると詳細が表示されます：
 
-<img src="../../assets/frontend/announcement-detail.png" alt="" width="520">
+<img src="../../assets/frontend/announcement-detail.png" alt="" width="80%" height="auto">
 
 詳細画面の表示内容：
 
@@ -66,12 +66,12 @@ Scan 完了後、受け取った転送がタイムスタンプ順に一覧表示
 1. アナウンスを展開する
 2. 「REDEEM」ボタンをクリック
 
-<img src="../../assets/frontend/redeem-detail.png" alt="" width="520">
+<img src="../../assets/frontend/redeem-detail.png" alt="" width="80%" height="auto">
 
 3. ZKP（Zero-Knowledge Proof）の生成とトランザクションの完了を待つ（資金の引き出し権限を証明するZKPが作成されます）
 4. 完了するとステータスが **REDEEMED** に変わり、ボタンが「Already Redeemed」と表示されます
 
-<img src="../../assets/frontend/redeem-success.png" alt="" width="520">
+<img src="../../assets/frontend/redeem-success.png" alt="" width="80%" height="auto">
 
 資金は接続中のウォレットアドレスに送金されます。
 

@@ -18,7 +18,7 @@ description: zERC20 ウェブアプリを使った Private Transfer（Private Se
 5. 送金する zERC20 の金額を入力
 6. 「Send Privately」をクリック
 
-<img src="../../assets/frontend/private-send-form.png" alt="" width="520">
+<img src="../../assets/frontend/private-send-form.png" alt="" width="80%" height="auto">
 
 転送は以下の3ステップで処理されます：
 
@@ -26,11 +26,11 @@ description: zERC20 ウェブアプリを使った Private Transfer（Private Se
 2. **保存**：暗号化アナウンスをオンチェーンまたはオフチェーンに保存（後で受信者が Scan して確認）
 3. **送金**：バーンアドレスにトークンを送信
 
-<img src="../../assets/frontend/transfer-progress.png" alt="" width="520">
+<img src="../../assets/frontend/transfer-progress.png" alt="" width="80%" height="auto">
 
 完了すると成功メッセージが表示されます：
 
-<img src="../../assets/frontend/transfer-success.png" alt="" width="520">
+<img src="../../assets/frontend/transfer-success.png" alt="" width="80%" height="auto">
 
 ### バーンアドレスに送金する
 
@@ -57,12 +57,12 @@ description: zERC20 ウェブアプリを使った Private Transfer（Private Se
 3. **「Pay with mobile」** オプションにチェックを入れる
 4. 「Pay with mobile」をクリック
 
-<img src="../../assets/frontend/pay-with-mobile-form.png" alt="" width="520">
+<img src="../../assets/frontend/pay-with-mobile-form.png" alt="" width="80%" height="auto">
 
 5. バーンアドレスを含む QR コードが生成される
 6. 支払い者に QR コードを共有する
 
-<img src="../../assets/frontend/pay-with-mobile-qr.png" alt="" width="320">
+<img src="../../assets/frontend/pay-with-mobile-qr.png" alt="" width="80%" height="auto">
 
 支払い者は QR コードをスキャンし、表示されたバーンアドレスに指定の金額を送金するだけです。オンチェーンで支払いが確認されると、受信者が資金を引き出せます。
 

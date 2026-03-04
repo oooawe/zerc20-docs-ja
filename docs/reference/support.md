@@ -1,11 +1,9 @@
 ---
 icon: hand-holding-hand
-description: サポートチャンネル
+description: zERC20 についてお困りの際は、以下のチャンネルからお問い合わせください
 ---
 
 # サポート
-
-zERC20 についてお困りの際は、以下のチャンネルからお問い合わせください。
 
 ## Telegram
 
