@@ -1,5 +1,5 @@
 ---
-icon: github-alt
+icon: bookmark
 ---
 
 # はじめに
