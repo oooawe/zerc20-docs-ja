@@ -9,7 +9,7 @@ description: zERC20 ウェブアプリの基本的な使い方
 
 [zERC20 フロントエンド](https://app.zerc20.io/) にアクセスしてください。
 
-> **💡 Hint：** テストトークンで試したい場合は、[Testnet フロントエンド](https://v2.testnet.app.zerc20.io/) を使用してください。
+> **💡 Hint：** テストトークンで試したい場合は、[Testnet フロントエンド](https://v2.testnet.app.zerc20.io/) を使ってください。
 
 <div align="center"><img src="../../assets/frontend/dashboard-overview.png" alt="" width="80%" height="auto"></div>
 

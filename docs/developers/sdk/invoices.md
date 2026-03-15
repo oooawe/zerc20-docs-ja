@@ -149,6 +149,22 @@ function listInvoices(
 
 Invoice ID を hex 文字列の配列で返します。これらの ID を使って特定の Invoice を検索・共有できます。
 
+## Invoice タイプの判定
+
+SDK には、Invoice ID がシングルかバッチかを判定するヘルパーが用意されています：
+
+```typescript
+import { isSingleInvoiceHex, isSingleInvoiceBytes } from "zerc20-client-sdk";
+
+// hex 文字列から判定
+const isSingle = isSingleInvoiceHex(invoiceId);
+
+// Uint8Array から判定
+const isSingle = isSingleInvoiceBytes(invoiceBytes);
+```
+
+Redeem 時にどの Proof モードを使うか（シングル Invoice は Groth16、バッチ Invoice は Nova）を判断するのに役立ちます。
+
 ## 完全なコード例
 
 Invoice の準備 → 署名 → 送信 → 一覧表示のエンドツーエンドフロー：

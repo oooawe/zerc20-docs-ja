@@ -1,6 +1,6 @@
 ---
 icon: memo-circle-info
-description: Internet Computer Protocol
+description: Internet Computer Protocol（ICP）によるステルスメッセージング仕様
 ---
 
 # ICP canister

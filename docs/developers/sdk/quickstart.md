@@ -71,35 +71,51 @@ const stealthClient = sdk.createStealthClient({
 sdk.createStealthClient(config?: Partial<StealthClientConfig>): StealthCanisterClient
 ```
 
-## トークンを読み込む
+## EVM プロバイダー
 
-SDK はトークン設定を読み込む2つの方法を提供しています：
+SDK はライブラリ非依存のプロバイダーインターフェースを使っており、viem 以外のライブラリとも連携できます。
 
-### 方法A：`loadTokens` で圧縮データから読み込む
+| インターフェース | 用途 | viem の対応クラス |
+|-----------|---------|-----------------|
+| `EvmReadProvider` | コントラクト読み取り・残高クエリ・手数料推定 | `PublicClient` |
+| `EvmWriteProvider` | トランザクションの署名・送信 | `WalletClient` |
 
-`loadTokens(compressed)` はトークン設定 JSON を含む **Base64 エンコードされた gzip** 文字列を受け取ります。これはプロダクションのフロントエンドで使用されている形式です。
+viem の `PublicClient` と `WalletClient` はこれらのインターフェースを構造的に満たすため、アダプターは不要です。他のライブラリを使う場合は、必要なメソッドを実装する薄いアダプターを用意します。
 
 ```typescript
-import {
-  loadTokens,
-  findTokenByChain,
-  createProviderForToken,
-} from "zerc20-client-sdk";
+import type { EvmReadProvider, EvmWriteProvider } from "zerc20-client-sdk";
+import { createPublicClient, createWalletClient, custom, http } from "viem";
+import { arbitrum } from "viem/chains";
+
+// EvmReadProvider / EvmWriteProvider としてそのまま使えます
+const readProvider = createPublicClient({ chain: arbitrum, transport: http() });
+const writeProvider = createWalletClient({ chain: arbitrum, transport: custom(window.ethereum!) });
+```
+
+## トークンを読み込む
+
+SDK はトークン設定を読み込む複数の方法を提供しています：
+
+### 方法A：`TokensCacheManager` で圧縮データから読み込む
+
+`TokensCacheManager.load()` はトークン設定 JSON を含む **Base64 エンコードされた gzip** 文字列を受け取ります。これはプロダクションのフロントエンドで使われている形式です。
+
+```typescript
+import { TokensCacheManager, findTokenByChain } from "zerc20-client-sdk";
 
 // `compressed` は tokens.json の Base64 エンコード gzip 文字列
-const { hub, tokens } = await loadTokens(compressedTokensString);
+const cache = new TokensCacheManager();
+const { hub, tokens } = await cache.load(compressedTokensString, {
+  cacheKey: "zusdc-main",
+});
 ```
 
 ### 方法B：`normalizeTokens` で生の JSON から読み込む
 
-自前のデプロイからの `tokens.json` ファイルがある場合は、代わりに `normalizeTokens()` を使います：
+自前のデプロイからの `tokens.json` ファイルがある場合は、`normalizeTokens()` を使います：
 
 ```typescript
-import {
-  normalizeTokens,
-  findTokenByChain,
-  createProviderForToken,
-} from "zerc20-client-sdk";
+import { normalizeTokens, findTokenByChain } from "zerc20-client-sdk";
 
 const tokensFile = await import("./tokens.json");
 const { hub, tokens } = normalizeTokens(tokensFile);
@@ -107,15 +123,32 @@ const { hub, tokens } = normalizeTokens(tokensFile);
 // tokens: TokenEntry[]     -- チェーンごとのトークンエントリ
 ```
 
-### トークンの検索とプロバイダーの作成
+### 方法C：RPC URL をオーバーライドする
+
+`normalizeTokensWithOverrides()` を使うと、実行時にデフォルトの RPC URL を差し替えられます：
+
+```typescript
+import { normalizeTokensWithOverrides, findTokenByChain } from "zerc20-client-sdk";
+
+const tokensFile = await import("./tokens.json");
+const { hub, tokens } = normalizeTokensWithOverrides(tokensFile, {
+  tokens: {
+    "Arbitrum One": ["https://my-rpc.example.com/arb"],
+    "Ethereum": ["https://my-rpc.example.com/eth"],
+  },
+  hub: ["https://my-rpc.example.com/base"],
+});
+```
+
+### トークンの検索
 
 ```typescript
 // Arbitrum（チェーン ID 42161）のトークンエントリを取得
 const entry = findTokenByChain(tokens, 42161n);
-
-// そのチェーン用に設定された viem PublicClient を作成
-const publicClient = createProviderForToken(entry);
+// entry.tokenAddress, entry.liquidityManagerAddress, etc.
 ```
+
+トークン API の詳細は [Token Registry](token-registry.md) を参照してください。
 
 ### 型シグネチャ
 

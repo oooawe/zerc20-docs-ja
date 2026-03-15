@@ -5,7 +5,7 @@ description: SKD
 
 # Proof 生成
 
-受け取り（[受け取り](receiving.md)を参照）で転送をスキャンした後、トークンをオンチェーンで請求するためのゼロ知識証明（Zero-Knowledge Proof）を生成します。SDK は Proof 生成を内部で処理します。`collectRedeemContext` から得たデータを渡すと、即座に送信できるコールデータが返ってきます。
+受け取り（[受け取り](receiving.md)を参照）で転送をスキャンした後、トークンをオンチェーンで請求するための ZKP（Zero-Knowledge Proof）を生成します。SDK は Proof 生成を内部で処理します。`collectRedeemContext` から得たデータを渡すと、即座に送信できるコールデータが返ってきます。
 
 ## 2 つの Proof モード
 

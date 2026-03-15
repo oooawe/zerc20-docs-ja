@@ -7,7 +7,7 @@ description: フォールディングガジェット（Folding gadget）
 
 ## 概要
 
-zERC20 はゼロ知識証明（Zero-Knowledge Proof）を用いて、送信者と受信者の関係を明かすことなくプライベート転送（Private Transfer）を検証します。すべての回路は BN254 スカラーフィールド上で動作します。
+zERC20 は ZKP（Zero-Knowledge Proof）を用いて、送信者と受信者の関係を明かすことなくプライベート転送（Private Transfer）を検証します。すべての回路は BN254 スカラーフィールド上で動作します。
 
 **ファイル**: `zkp/src/circuits/`
 

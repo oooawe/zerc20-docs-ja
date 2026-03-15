@@ -245,7 +245,7 @@ struct FeeParams {
 
 ### ネイティブトークンのサポート
 
-Fee Manager は LiquidityManager がネイティブ ETH を使用しているか ERC20 を使用しているかを自動的に検出します：
+Fee Manager は LiquidityManager がネイティブ ETH を使っているか ERC20 を使っているかを自動的に検出します：
 
 * **ネイティブ ETH**：ERC-7528 センチネルアドレス `0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE` で検出
 * **ERC20**：原資産トークンの `balanceOf()` で残高を取得

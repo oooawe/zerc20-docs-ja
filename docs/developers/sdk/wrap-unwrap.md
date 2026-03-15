@@ -1,11 +1,19 @@
 ---
 icon: toilet-paper-check
-description: SKD
+description: SDK を使った Wrap / Unwrap の操作方法
 ---
 
 # Wrap と Unwrap
 
 `LiquidityManager` コントラクトは原資産トークン（USDC・ETH・BNB）と対応する zERC20（zUSDC・zETH・zBNB）を相互変換します。Wrap では原資産トークンをデポジットして zERC20 をミントし、プロトコルはデポジットを促す **リワード** インセンティブを付与します。Unwrap では zERC20 をバーンして原資産トークン（手数料を差し引いた額）を返します。リワードと手数料はどちらも、プールの残高を健全に保つための流動性目標値カーブによって決まります。
+
+## EVM プロバイダー
+
+すべての Wrap / Unwrap 関数は、ライブラリ非依存の `EvmWriteProvider` および `EvmReadProvider` インターフェースを使います。viem の `WalletClient` と `PublicClient` はアダプターなしでこれらのインターフェースをそのまま満たします。
+
+```typescript
+import type { EvmReadProvider, EvmWriteProvider } from "zerc20-client-sdk";
+```
 
 ## Wrap
 

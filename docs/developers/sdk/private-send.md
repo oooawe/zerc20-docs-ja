@@ -88,25 +88,46 @@ function preparePrivateSend(
 
 ## ステップ3：バーンアドレスに zERC20 を送金する
 
-任意の EVM ライブラリ（viem・ethers など）を使って、標準の ERC-20 `transfer` で `preparation.burnAddress` にトークンを送金します。
+SDK の `submitPrivateSendTransfer()` を使って、バーンアドレスへの ERC-20 転送を実行します。このヘルパーはライブラリ非依存の `EvmWriteProvider` インターフェースを使って `transfer` 呼び出しをラップします。
 
 ```typescript
-import { encodeFunctionData, erc20Abi } from "viem";
+import { submitPrivateSendTransfer } from "zerc20-client-sdk";
 
-const txHash = await walletClient.sendTransaction({
-  to: tokenAddress,   // 送信者のチェーン上の zERC20 コントラクトアドレス
-  data: encodeFunctionData({
-    abi: erc20Abi,
-    functionName: "transfer",
-    args: [preparation.burnAddress, amount],
-  }),
+const { transactionHash } = await submitPrivateSendTransfer({
+  writeProvider,                           // EvmWriteProvider（例：viem WalletClient）
+  tokenAddress: entry.tokenAddress,        // zERC20 コントラクトアドレス
+  burnAddress: preparation.burnAddress,    // ステップ2の結果
+  amount: 100_000_000n,                    // 100 zUSDC (6 decimals)
+  readProvider,                            // 省略可：レシート確認用 EvmReadProvider
 });
-
-// トランザクションの確認を待機
-await publicClient.waitForTransactionReceipt({ hash: txHash });
 ```
 
-> **📃 Note：** 送金金額はアナウンスにエンコードされません。Indexer がオンチェーンのイベントから金額を検出します。1回のトランザクションで任意の金額を送金できます。
+### パラメータ
+
+| フィールド | 型 | 必須 | 説明 |
+|-------|------|----------|-------------|
+| `writeProvider` | `EvmWriteProvider` | Yes | トランザクションの署名・送信に使うウォレットプロバイダー |
+| `tokenAddress` | `string` | Yes | 送信者チェーン上の zERC20 コントラクトアドレス |
+| `burnAddress` | `string` | Yes | `preparePrivateSend()` で取得したバーンアドレス |
+| `amount` | `bigint` | Yes | トークンの最小単位での転送金額 |
+| `feeOverrides` | `FeeOverrides` | No | `buildFeeOverrides` からのガス価格オーバーライド（任意） |
+| `readProvider` | `EvmReadProvider` | No | レシートポーリング用プロバイダー。省略時は `writeProvider` にフォールバック |
+
+### 戻り値
+
+| フィールド | 型 | 説明 |
+|-------|------|-------------|
+| `transactionHash` | `Hex` | 確認済みのトランザクションハッシュ |
+
+> **📃 Note：** `submitPrivateSendTransfer` を使わず、任意の EVM ライブラリで標準の ERC-20 `transfer(burnAddress, amount)` を直接呼び出しても構いません。
+
+### シグネチャ
+
+```typescript
+function submitPrivateSendTransfer(
+  params: SubmitPrivateSendTransferParams,
+): Promise<{ transactionHash: Hex }>;
+```
 
 ## ステップ4：アナウンスを送信する
 

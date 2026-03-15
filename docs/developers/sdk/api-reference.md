@@ -15,6 +15,16 @@ description: SDK
 | `Zerc20Sdk`        | クラス                            | -           | WASM・Proof・Decider・Stealth をまとめたメイン SDK               |
 | `Zerc20SdkOptions` | インターフェース                       | -           | オプション：`wasm?`、`teleportProofs?`、`decider?`、`stealth?` |
 
+## EVM Providers
+
+ライブラリ非依存の EVM インタラクション用インターフェースです。viem の `PublicClient` と `WalletClient` はアダプターなしでこれらを満たします。
+
+| 名称 | 種別 | 説明 |
+|------|------|-------------|
+| `EvmReadProvider` | インターフェース | 読み取り専用プロバイダー：`readContract`、省略可能な `getBalance`・`estimateFeesPerGas`・`getGasPrice`・`waitForTransactionReceipt`・`getTransaction`・`getTransactionReceipt` |
+| `EvmWriteProvider` | インターフェース | 書き込みプロバイダー：`writeContract`、省略可能な `account`・`chain` |
+| `Hex` | 型 | `0x` プレフィックス付きの16進数エンコード文字列（`` `0x${string}` ``） |
+
 ## ICP / Stealth
 
 | 名称                           | シグネチャ                                   | 戻り値                              | 説明                                                    |
@@ -59,6 +69,49 @@ description: SDK
 | `collectRedeemContext`  | `(params: RedeemContextParams)`      | `Promise<RedeemContext>`      | Redeem に必要なイベントと Proof をまとめて取得 |
 | `getAnnouncementStatus` | `(params: AnnouncementStatusParams)` | `Promise<AnnouncementStatus>` | アナウンスメントのステータスを軽量チェック          |
 
+## Chain Metadata
+
+| 名称 | シグネチャ | 戻り値 | 説明 |
+|------|-----------|---------|-------------|
+| `getChainMetadata` | `(chainId: number \| bigint)` | `ChainMetadata \| undefined` | チェーン ID のメタデータを取得 |
+| `getChainDisplayName` | `(chainId: number \| bigint)` | `string` | 人間が読めるチェーン名（例：`"Ethereum"`、`"Arbitrum"`） |
+| `getChainShortName` | `(chainId: number \| bigint)` | `string \| undefined` | 短いチェーンラベル（例：`"ETH"`、`"ARB"`） |
+| `getExplorerTxUrl` | `(chainId: number \| bigint, txHash: string)` | `string \| undefined` | トランザクションのブロックエクスプローラー URL |
+| `resolveChainId` | `(name: string)` | `number \| undefined` | 名前やエイリアスからチェーン ID を解決 |
+| `resolveNetworkDisplayName` | `(label: string)` | `string` | チェーンラベルから表示名を解決 |
+
+## LayerZero Scan
+
+LayerZero Scan API を使ったクロスチェーンメッセージの追跡。詳細は [LayerZero Scan](layerzero-scan.md) を参照してください。
+
+| 名称 | シグネチャ | 戻り値 | 説明 |
+|------|-----------|---------|-------------|
+| `fetchWalletStatus` | `(params: FetchWalletStatusParams)` | `Promise<WalletStatusResult>` | ウォレットの全 LZ メッセージを取得・デコード |
+| `fetchWalletMessages` | `(config, address, params?)` | `Promise<ScanMessagesResponse>` | LZ Scan API：ウォレットメッセージ |
+| `fetchTxMessages` | `(config, txHash)` | `Promise<ScanMessagesResponse>` | LZ Scan API：トランザクションのメッセージ |
+| `getWalletMessagesUrl` | `(config, address)` | `string` | LZ Scan エクスプローラー URL を生成 |
+| `tryDecodeBridgeRequest` | `(composeMsg: Hex)` | `BridgeRequestSummary \| null` | compose メッセージをブリッジリクエストとしてデコード |
+| `decodeSendSummary` | `(data: Hex)` | `SendPayloadSummary` | OFT 送信ペイロードをデコード |
+| `fetchOftSentAmount` | `(provider, txHash)` | `Promise<bigint \| undefined>` | トランザクションログから OFTSent の金額を読み取る |
+| `decorateSendSummary` | `(summary, token?, fetchMetadata?)` | decorated summary | 送信サマリーにトークンメタデータを付加 |
+| `endpointChain` | `(endpoint, direction)` | `string` | LZ エンドポイントからチェーン名を取得 |
+| `destinationTx` | `(message)` | `string \| undefined` | 送信先 tx ハッシュを抽出 |
+| `summarizeBlock` | `(message, direction)` | `string` | ブロック情報を要約 |
+| `formatPathway` | `(message)` | `string` | src → dst の経路を整形 |
+| `isMessageForTokens` | `(message, tokens)` | `boolean` | メッセージが指定トークンに関連するか確認 |
+| `findTokenForMessage` | `(message, tokens)` | `TokenEntry \| undefined` | メッセージに対応するトークンを検索 |
+
+## Onchain
+
+| 名称 | シグネチャ | 戻り値 | 説明 |
+|------|-----------|---------|-------------|
+| `readTokenBalance` | `(provider, tokenAddress, account)` | `Promise<bigint>` | プロバイダー経由で ERC-20 残高を読み取る |
+| `readTokenDecimals` | `(provider, tokenAddress)` | `Promise<number>` | プロバイダー経由で ERC-20 デシマルを読み取る |
+| `readDecimalConversionRate` | `(provider, tokenAddress)` | `Promise<bigint>` | zERC20 のデシマル変換レートを読み取る |
+| `decodeSendPayload` | `(data: Hex)` | `DecodedSendPayload` | OFT の send() calldata をデコード |
+| `extractOftSentAmount` | `(logs)` | `bigint \| undefined` | tx ログから OFTSent の金額を抽出 |
+| `decodeBridgeRequest` | `(composeMsg: Hex)` | `DecodedBridgeRequest \| null` | ブリッジ compose メッセージをデコード |
+
 ## Proofs
 
 | 名称                          | シグネチャ        | 戻り値                   | 説明                        |
@@ -81,13 +134,24 @@ description: SDK
 
 | 名称                       | シグネチャ                    | 戻り値                         | 説明                              |
 | ------------------------ | ------------------------ | --------------------------- | ------------------------------- |
-| `loadTokens`             | `(compressed, options?)` | `Promise<NormalizedTokens>` | 圧縮済み（Base64 gzip）文字列からトークンを読み込む |
 | `normalizeTokens`        | `(file: TokensFile)`     | `NormalizedTokens`          | 生のトークン設定を正規化                    |
+| `normalizeTokensWithOverrides` | `(file: TokensFile, overrides?: RpcOverrides)` | `NormalizedTokens` | RPC URL オーバーライド付きで正規化 |
 | `findTokenByChain`       | `(tokens, chainId)`      | `TokenEntry`                | チェーン ID でトークンを検索                |
-| `createProviderForToken` | `(entry)`                | `PublicClient`              | RPC プロバイダを作成                    |
-| `clearTokensCache`       | `()`                     | `void`                      | トークンキャッシュをクリア                   |
+| `TokensCacheManager`     | クラス                      | -                           | 圧縮済みトークンデータのキャッシュマネージャ          |
 
-## Contracts
+## Contract Artifacts
+
+SDK はオンチェーンコントラクトの ABI アーティファクトをエクスポートしています。任意の EVM ライブラリで直接コントラクトとやり取りする際に使えます。
+
+| 名称 | 説明 |
+|------|-------------|
+| `Zerc20Artifact` | zERC20 トークンコントラクト ABI |
+| `VerifierArtifact` | Verifier コントラクト ABI |
+| `HubArtifact` | Hub コントラクト ABI |
+| `LiquidityManagerArtifact` | LiquidityManager コントラクト ABI |
+| `AdaptorArtifact` | Adaptor コントラクト ABI |
+
+コントラクトインスタンスのヘルパー関数：
 
 | 名称                            | シグネチャ               | 戻り値          | 説明                         |
 | ----------------------------- | ------------------- | ------------ | -------------------------- |
@@ -96,6 +160,14 @@ description: SDK
 | `getHubContract`              | `(address, client)` | コントラクトインスタンス | Hub コントラクトを取得              |
 | `getLiquidityManagerContract` | `(address, client)` | コントラクトインスタンス | LiquidityManager コントラクトを取得 |
 | `getAdaptorContract`          | `(address, client)` | コントラクトインスタンス | Adaptor コントラクトを取得          |
+
+## Utilities
+
+| 名称 | シグネチャ | 戻り値 | 説明 |
+|------|-----------|---------|-------------|
+| `buildFeeOverrides` | `(provider: EvmReadProvider)` | `Promise<FeeOverrides>` | プロバイダーからガス手数料オーバーライドを構築 |
+| `isHex` | `(value: unknown)` | `boolean` | 値が有効な `0x` プレフィックス付き16進数文字列かチェック |
+| `keccak256` | `(input)` | `Hex` | keccak256 ハッシュを計算 |
 
 ## Types
 

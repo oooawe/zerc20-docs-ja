@@ -184,31 +184,95 @@ function collectRedeemContext(
 * **Eligible イベント**：Merkle Root がオンチェーンで証明済みで Hub に集約済みの転送。今すぐ Redeem できます。
 * **Ineligible イベント**：インデックスは済んでいるが、Root がまだ証明または集約されていない転送。Indexer とクロスチェーンジョブが追いつき次第、Eligible になります。
 
-## ステップ6：Proof を生成して Teleport する
+## ステップ6：Redeem トランザクションを準備・送信する
 
-`RedeemContext` の eligible イベントとグローバル Proof を使って ZKP を生成し、オンチェーンに送信します。完全な API リファレンスは [Proof 生成](proof-generation.md) を参照してください。
-
-2つの Redeem 方法があります：
-
-### Single Teleport
-
-Groth16 Proof で1件の eligible イベントを Redeem します：
+SDK は Redeem に prepare / submit の2ステップパターンを提供しています。`prepareRedeemTransaction()` が ZKP を生成してトランザクションデータを組み立て、`submitRedeemTransaction()` が署名してオンチェーンに送信します。
 
 ```typescript
-const proof = await createSingleTeleportProof(/* ... */);
-// Verifier.singleTeleport() に送信
+import {
+  prepareRedeemTransaction,
+  submitRedeemTransaction,
+} from "zerc20-client-sdk";
+
+// Prepare：Proof を生成してトランザクションオブジェクトを構築
+const redeemTx = await prepareRedeemTransaction({
+  redeemContext,
+  burn,                       // BurnArtifacts
+  teleportProofClient: sdk.teleportProofs,
+  decider: sdk.decider,       // 省略可：バッチ Proof に必要
+});
+
+// Submit：トランザクションに署名してオンチェーンに送信
+const { transactionHash } = await submitRedeemTransaction({
+  writeProvider,              // EvmWriteProvider
+  tx: redeemTx,               // prepare ステップの RedeemTransaction
+  readProvider,               // 省略可：レシートポーリング用
+  feeOverrides,               // 省略可：ガス価格オーバーライド
+});
 ```
 
-### Batch Teleport
+SDK は eligible イベントの数に応じて Proof モードを自動選択します：
 
-Nova バッチ Proof で複数の eligible イベントを一度に Redeem します：
+- **1件の eligible イベント** — Groth16 シングル Proof（`Verifier.singleTeleport()`）
+- **複数の eligible イベント** — Nova バッチ Proof（`Verifier.teleport()`、Decider が必要）
+
+### prepareRedeemTransaction
 
 ```typescript
-const proof = await createBatchTeleportProof(/* ... */);
-// Verifier.teleport() に送信
+function prepareRedeemTransaction(
+  params: PrepareRedeemTransactionParams,
+): Promise<RedeemTransaction>;
 ```
 
-どちらの関数も `RedeemContext` の `eligibleProofs` と `globalProofs` を入力として受け取ります。
+**PrepareRedeemTransactionParams：**
+
+| フィールド | 型 | 必須 | 説明 |
+|-------|------|----------|-------------|
+| `redeemContext` | `RedeemContext` | Yes | `collectRedeemContext()` の結果 |
+| `burn` | `BurnArtifacts` | Yes | アナウンスの Burn アーティファクト |
+| `teleportProofClient` | `TeleportProofClient` | Yes | Proof 生成クライアント（`sdk.teleportProofs`） |
+| `decider` | `HttpDeciderClient` | No | バッチ Proof に必要。シングルのみの場合は省略可 |
+
+**RedeemTransaction：**
+
+| フィールド | 型 | 説明 |
+|-------|------|-------------|
+| `mode` | `"single" \| "batch"` | 使われた Proof モード |
+| `address` | `Hex` | Verifier コントラクトアドレス |
+| `abi` | `object` | Verifier ABI |
+| `functionName` | `"singleTeleport" \| "teleport"` | 呼び出すコントラクト関数 |
+| `args` | `readonly [...]` | コントラクト呼び出し用のエンコード済み引数 |
+
+### submitRedeemTransaction
+
+```typescript
+function submitRedeemTransaction(
+  params: SubmitRedeemTransactionParams,
+): Promise<{ transactionHash: Hex }>;
+```
+
+**SubmitRedeemTransactionParams：**
+
+| フィールド | 型 | 必須 | 説明 |
+|-------|------|----------|-------------|
+| `writeProvider` | `EvmWriteProvider` | Yes | 署名・送信用のウォレットプロバイダー |
+| `tx` | `RedeemTransaction` | Yes | `prepareRedeemTransaction()` の結果 |
+| `feeOverrides` | `FeeOverrides` | No | ガス価格オーバーライド（任意） |
+| `readProvider` | `EvmReadProvider` | No | レシートポーリング用プロバイダー |
+
+### 事前構築済み Proof でのバッチ Redeem
+
+外部サービスなどで Decider Proof を既に持っている場合は、`buildBatchRedeemTransaction()` でトランザクションを直接組み立てられます：
+
+```typescript
+import { buildBatchRedeemTransaction } from "zerc20-client-sdk";
+
+const redeemTx = buildBatchRedeemTransaction({
+  redeemContext,
+  burn,
+  deciderProof: proofBytes,  // Decider からの Uint8Array
+});
+```
 
 ## ステータス確認
 

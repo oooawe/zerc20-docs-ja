@@ -142,5 +142,6 @@ vite.config.ts.timestamp-*
 .DS_Store
 
 # etc
-CLAUDE/
 .gitmessage.txt
+zerc20-docs-review/
+CLAUDE/
