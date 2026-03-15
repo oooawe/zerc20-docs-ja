@@ -24,6 +24,7 @@
   * [Wrap と Unwrap](developers/sdk/wrap-unwrap.md)
   * [Proof 生成](developers/sdk/proof-generation.md)
   * [Token Registry](developers/sdk/token-registry.md)
+  * [LayerZero Scan](developers/sdk/layerzero-scan.md)
   * [API リファレンス](developers/sdk/api-reference.md)
 * [インテグレーションガイド](developers/integration.md)
 * [Circuit セットアップ](developers/circuit-setup.md)
