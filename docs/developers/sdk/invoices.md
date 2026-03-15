@@ -197,4 +197,4 @@ const invoiceIds = await listInvoices(
 console.log("All invoices:", invoiceIds);
 ```
 
-送信後、送信者は Invoice を取得してバーンアドレスを確認し、[プライベート送信](private-send.md)を実行できます。SDK クライアントのセットアップ方法は [SDK クイックスタート](quickstart.md) を参照してください。
+送信後、送信者は Invoice を取得してバーンアドレスを確認し、[プライベート送信](private-send.md) を実行できます。SDK クライアントのセットアップ方法は [SDK クイックスタート](quickstart.md) を参照してください。
