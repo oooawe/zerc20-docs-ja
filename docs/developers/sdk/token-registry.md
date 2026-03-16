@@ -1,5 +1,4 @@
 ---
-hidden: true
 icon: coins
 description: サポートトークンの読み込みと管理
 ---
