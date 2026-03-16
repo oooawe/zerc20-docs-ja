@@ -23,7 +23,7 @@ zERC20 インテグレーションには3つの方法があります：
 
 ## トークンインテグレーション
 
-zERC20 は完全な ERC-20 互換です。ERC-20 トークンをサポートするあらゆるアプリケーションで zERC20 を使用できます。
+zERC20 は完全な ERC-20 互換です。ERC-20 トークンをサポートするあらゆるアプリケーションで zERC20 を使えます。
 
 ### コントラクトアドレス
 
@@ -197,7 +197,7 @@ contract MyContract {
 
 ### Poseidon Hash の互換性
 
-zERC20 が使用する Poseidon Hash は [circomlib の Poseidon ライブラリ](https://github.com/iden3/circomlib/blob/master/circuits/poseidon.circom) と完全に互換性があります：
+zERC20 が使っている Poseidon Hash は [circomlib の Poseidon ライブラリ](https://github.com/iden3/circomlib/blob/master/circuits/poseidon.circom) と完全に互換性があります：
 
 | 用途      | circomlib テンプレート | 説明                          |
 | ------- | ---------------- | --------------------------- |

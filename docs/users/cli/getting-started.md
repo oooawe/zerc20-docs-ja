@@ -129,7 +129,7 @@ zerc20-cli invoice receive --chain-id 1 --invoice-id inv-01
 
 ## 重要な注意事項
 
-* **クロスチェーン対応**：あるチェーンで送金し、別のチェーンで受け取ることができます
+* **クロスチェーン対応**：あるチェーンで送金し、別のチェーンで受け取れます
 * **処理時間**：Mainnet でのプライベート転送（Private Transfer）は通常30分〜1時間かかります
 * **Testnet の制限**：LayerZero の不安定性により、Testnet では処理に時間がかかる場合があります
 

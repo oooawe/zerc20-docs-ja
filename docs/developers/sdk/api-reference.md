@@ -41,7 +41,7 @@ description: zerc20-client-sdk の全エクスポートとパラメータ一覧
 | 名称                              | シグネチャ                                | 戻り値                            | 説明                                     |
 | ------------------------------- | ------------------------------------ | ------------------------------ | -------------------------------------- |
 | `preparePrivateSend`            | `(params: PreparePrivateSendParams)` | `Promise<PreparedPrivateSend>` | バーンアドレス（Burn Address）を導出してアナウンスメントを暗号化 |
-| `submitPrivateSendAnnouncement` | `(params: SubmitPrivateSendParams)`  | `Promise<PrivateSendResult>`   | アナウンスメントをストレージキャニスタに送信                 |
+| `submitPrivateSendAnnouncement` | `(params: SubmitPrivateSendParams)`  | `Promise<PrivateSendResult>`   | アナウンスメントをストレージキャニスターに送信                 |
 
 ## Invoice
 

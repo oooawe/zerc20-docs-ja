@@ -90,7 +90,7 @@ description: コントラクトアドレス一覧
 | LiquidityManager | `0x39Cc069dF606c7bc8c79b0ADd0696BCaf548eFD9` |
 | Adaptor          | —                                            |
 
-> **📃 Note：** zBNB の Wrap / Unwrap は BNB Chain のみ対応しています。他のチェーンは LayerZero OFT を通じた zBNB 転送をサポートしていますが、LiquidityManager コントラクトは配備されていません。
+> **📃 Note：** zBNB の Wrap / Unwrap は BNB Chain のみ対応しています。他のチェーンは LayerZero OFT を通じた zBNB 転送をサポートしていますが、LiquidityManager コントラクトはデプロイされていません。
 
 #### Ethereum
 
@@ -160,7 +160,7 @@ description: コントラクトアドレス一覧
 | ------ | -------------------------------------------- |
 | Hub    | `0xD18b503B335656C05dC516366C0C8FD6e3b13856` |
 
-> Hub のみ — このチェーンには zERC20 / Verifier / LiquidityManager / Adaptor コントラクトは配備されていません。
+> Hub のみ — このチェーンには zERC20 / Verifier / LiquidityManager / Adaptor コントラクトはデプロイされていません。
 
 ***
 
@@ -201,7 +201,7 @@ description: コントラクトアドレス一覧
 | ------ | -------------------------------------------- |
 | Hub    | `0xF64Bd0a90120611b0c941e3eF546f2F82F1eaB44` |
 
-> Hub のみ — このチェーンには zERC20 / Verifier / LiquidityManager / Adaptor コントラクトは配備されていません。
+> Hub のみ — このチェーンには zERC20 / Verifier / LiquidityManager / Adaptor コントラクトはデプロイされていません。
 
 ***
 

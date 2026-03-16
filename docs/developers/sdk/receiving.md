@@ -54,7 +54,7 @@ const signature = await walletClient.signMessage({
 });
 ```
 
-ウォレットはユーザーへの承認確認として `payload.message` を表示します。取得した署名は次のステップでアドレスの所有を証明するために使用します。
+ウォレットはユーザーへの承認確認として `payload.message` を表示します。取得した署名は次のステップでアドレスの所有証明に使います。
 
 ## ステップ3：VetKey を要求する
 
@@ -82,7 +82,7 @@ function requestVetKey(
 ): Promise<VetKey>;
 ```
 
-返された `VetKey` は ICP に保管されたアナウンスの復号に使用します。
+返された `VetKey` は ICP に保管されたアナウンスの復号に使います。
 
 ## ステップ4：アナウンスを Scan する
 

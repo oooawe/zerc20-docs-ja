@@ -21,7 +21,7 @@ npm install zerc20-client-sdk
 
 ## SDK を初期化する
 
-`createSdk()` を呼び出して `Zerc20Sdk` インスタンスを取得します。すべてのオプションはオプショナルで、省略した場合は適切なデフォルト値が使用されます。
+`createSdk()` を呼び出して `Zerc20Sdk` インスタンスを取得します。すべてのオプションは省略可能で、省略した場合は適切なデフォルト値が使われます。
 
 ```typescript
 import { createSdk } from "zerc20-client-sdk";
