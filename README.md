@@ -23,7 +23,8 @@
 ---  
 
 
-🌏 Live Site: https://zkpaw.gitbook.io/
+🌏 Live Site: https://zkpaw.gitbook.io/  
+💡（ブラウザに古いキャッシュが残っているため、ハードリロードを行う事をおすすめします
 
 
 ---  
