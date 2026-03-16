@@ -1,44 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
 Original content & materials: zerc20.io (all rights reserved by respective owner)
 This page is an unofficial Japanese translation / adaptation by awe-lab
 Source/Reference: https://zerc20.io
 -->
 
-<svg id="zMark" data-name="zMark" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 180 180">
+<svg id="zMark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180">
 <defs>
 <linearGradient id="zBaseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" stop-color="#55cc88"/>
-<stop offset="40%" stop-color="#55cc88"/>
-<stop offset="100%" stop-color="#128454"/>
+<stop offset="0%" stop-color="#007D7D"/>
+<stop offset="50%" stop-color="#4DB0B0"/>
+<stop offset="100%" stop-color="#003333"/>
 </linearGradient>
 
 <linearGradient id="zGhostGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" stop-color="#8fffe0"/>
-<stop offset="50%" stop-color="#ffffff"/>
-<stop offset="100%" stop-color="#52dba8"/>
+<stop offset="0%" stop-color="#53AFAF"/>
+<stop offset="50%" stop-color="#7FC6C6"/>
+<stop offset="100%" stop-color="#2D9494"/>
 </linearGradient>
 
-<filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
-<feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="blur1"/>
-<feColorMatrix in="blur1" type="matrix" values="
-1 0 0 0 0
-0 1 0 0 0
-0 0 1 0 0
-0 0 0 0.5 0" result="glow1"/>
-<feMerge>
-<feMergeNode in="glow1"/>
-<feMergeNode in="SourceGraphic"/>
-</feMerge>
-</filter>
-
 <filter id="flashGlow" x="-60%" y="-60%" width="220%" height="220%">
-<feGaussianBlur in="SourceGraphic" stdDeviation="4.2" result="blur2"/>
+<feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur2"/>
 <feColorMatrix in="blur2" type="matrix" values="
-1 0 0 0 0
-0 1 0 0 0
-0 0 1 0 0
-0 0 0 0.95 0" result="glow2"/>
+1 0 0 0 0.1
+0 1 0 0 0.1
+0 0 1 0 0.1
+0 0 0 0.4 0" result="glow2"/>
 <feMerge>
 <feMergeNode in="glow2"/>
 <feMergeNode in="SourceGraphic"/>
@@ -51,47 +39,47 @@ Source/Reference: https://zerc20.io
 <g id="teleportScene">
 <use id="zBase" href="#zShape" fill="url(#zBaseGradient)">
 <animate attributeName="opacity" dur="18s" repeatCount="indefinite"
-keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
-values="1;1;0.92;0.18;0;0;0.15;1;1"/>
+keyTimes="0;0.82;0.824;0.828;0.832;0.836;0.975;0.979;0.983;0.987;0.992;1"
+values="1;1;0.1;0.65;0.05;0;0;0.05;0.6;0.1;1;1"/>
 <animateTransform attributeName="transform" type="translate" additive="sum" dur="18s" repeatCount="indefinite"
-keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
-values="0 0;0 0;0 0;2 -1;5 -2;4 -2;1 0;0 0;0 0"/>
+keyTimes="0;0.82;0.824;0.828;0.832;0.836;0.975;0.979;0.983;0.987;0.992;1"
+values="0 0;0 0;3 -1;-1 0;2 -1;0 0;0 0;-1 1;1 0;-2 1;0 0;0 0"/>
 <animateTransform attributeName="transform" type="scale" additive="sum" dur="18s" repeatCount="indefinite"
-keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
-values="1 1;1 1;1.01 1.01;0.985 0.985;0.96 0.96;0.975 0.975;1.01 1.01;1 1;1 1"/>
+keyTimes="0;0.82;0.824;0.828;0.832;0.836;0.975;0.979;0.983;0.987;0.992;1"
+values="1 1;1 1;1.03 1.03;0.97 0.97;1.02 1.02;0.96 0.96;0.96 0.96;1.03 1.03;0.98 0.98;1.02 1.02;1 1;1 1"/>
 </use>
 
-<use id="zGhost" href="#zShape" fill="url(#zGhostGradient)" opacity="1" filter="url(#flashGlow)">
+<use id="zGhost" href="#zShape" fill="url(#zGhostGradient)" opacity="0">
 <animate attributeName="opacity" dur="18s" repeatCount="indefinite"
-keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
-values="0;0;0.1;0.9;0.55;0;0;0;0"/>
+keyTimes="0;0.82;0.824;0.828;0.832;0.836;0.975;0.979;0.983;0.987;0.992;1"
+values="0;0;0.35;0.05;0.4;0.12;0;0.25;0.04;0.35;0;0"/>
 <animateTransform attributeName="transform" type="translate" dur="18s" repeatCount="indefinite"
-keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
-values="0 0;0 0;0 0;-2 1;-12 4;-6 2;0 0;0 0;0 0"/>
+keyTimes="0;0.82;0.824;0.828;0.832;0.836;0.975;0.979;0.983;0.987;0.992;1"
+values="0 0;0 0;-5 2;-2 1;-10 4;-18 7;-18 7;5 -2;2 -1;-4 2;0 0;0 0"/>
 <animateTransform attributeName="transform" type="skewX" additive="sum" dur="18s" repeatCount="indefinite"
-keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
-values="0;0;0;8;2;0;0;0;0"/>
+keyTimes="0;0.82;0.824;0.828;0.832;0.836;0.975;0.979;0.983;0.987;0.992;1"
+values="0;0;14;-5;18;4;0;-10;4;-14;0;0"/>
 </use>
 
-<use id="zFlash" href="#zShape" fill="#ffffff" opacity="0" filter="url(#flashGlow)">
+<use id="zFlash" href="#zShape" fill="#3F9C9C" filter="url(#flashGlow)" opacity="0">
 <animate attributeName="opacity" dur="18s" repeatCount="indefinite"
-keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
-values="0;0;0.18;1;0.35;0;0;0;0"/>
+keyTimes="0;0.82;0.824;0.828;0.832;0.836;0.975;0.979;0.983;0.987;0.992;1"
+values="0;0;0.55;0.08;0.65;0.08;0;0.45;0.06;0.55;0;0"/>
 <animateTransform attributeName="transform" type="translate" dur="18s" repeatCount="indefinite"
-keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
-values="0 0;0 0;0 0;1 0;0 0;0 0;0 0;0 0;0 0"/>
+keyTimes="0;0.82;0.824;0.828;0.832;0.836;0.975;0.979;0.983;0.987;0.992;1"
+values="0 0;0 0;-2 1;1 -1;-3 2;0 0;0 0;2 -1;-1 1;-2 1;0 0;0 0"/>
 </use>
 
 <g id="scanLines" opacity="0">
-<rect x="8" y="44" width="164" height="5" rx="2.5" fill="#b8fff0"/>
-<rect x="14" y="85" width="152" height="4" rx="2" fill="#dffff7"/>
-<rect x="6" y="122" width="168" height="6" rx="3" fill="#90ffe0"/>
+<rect x="8" y="44" width="164" height="5" rx="2.5" fill="#6EB8B8"/>
+<rect x="14" y="85" width="152" height="4" rx="2" fill="#5AAEAE"/>
+<rect x="6" y="122" width="168" height="6" rx="3" fill="#4DA5A5"/>
 <animate attributeName="opacity" dur="18s" repeatCount="indefinite"
-keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
-values="0;0;0;0.95;0.35;0;0;0;0"/>
+keyTimes="0;0.82;0.824;0.828;0.832;0.836;0.975;0.979;0.983;0.987;0.992;1"
+values="0;0;0.55;0.08;0.65;0.15;0;0.45;0.06;0.55;0;0"/>
 <animateTransform attributeName="transform" type="translate" dur="18s" repeatCount="indefinite"
-keyTimes="0;0.72;0.74;0.765;0.79;0.91;0.94;0.965;1"
-values="0 0;0 0;0 0;8 0;22 0;0 0;0 0;0 0;0 0"/>
+keyTimes="0;0.82;0.824;0.828;0.832;0.836;0.975;0.979;0.983;0.987;0.992;1"
+values="0 0;0 0;18 0;-8 0;28 0;35 0;35 0;-12 0;6 0;22 0;0 0;0 0"/>
 </g>
 </g>
 </svg>
