@@ -90,7 +90,9 @@ leaf = poseidon2(start, end)
 
 ## CLI 使用方法（予定）
 
-> **📃 Note：** これは MVP インターフェースです。ユーザーはウィットネスファイルを手動で組み立てる必要があります。
+{% hint style="info" %}
+**📃 Note：** これは MVP インターフェースです。ユーザーは witness file を手動で構築する必要があります。
+{% endhint %}
 
 ### Proof of Innocence を生成する
 

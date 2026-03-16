@@ -8,7 +8,7 @@ description: zERC20のプライベート転送（Private Transfer）の仕組み
 
 ## プライベート転送の流れ
 
-<div align="center"><img src="../assets/design/burn_address.png" alt="" width="80%" height="auto"></div>
+<div align="center"><img src="../assets/design/burn_address.png" alt="" width="70%" height="auto"></div>
 
 ### ステップ1：バーンアドレスを生成する
 

@@ -14,7 +14,9 @@ description: SDK を使ったプライベート zERC20 転送（Private Transfer
 2. **バーンアドレスへの zERC20 送金** — 標準の ERC-20 `transfer` でトークンをバーンアドレスに送ります。Indexer が転送リーフを記録します。
 3. **暗号化アナウンスの送信** — 送信者が転送メタデータ（secret・金額など）を ICP canister 経由で暗号化し、受信者だけが復号して後から資金を請求できるようにします。
 
-> 受信者はその後 ICP ストレージ canister を Scan し、アナウンスを復号して ZKP（Zero-Knowledge Proof）を生成し、`Verifier.teleport()` 経由で同額の zERC20 をミントできます。
+{% hint style="success" %}
+ICP ストレージ canister を Scan し、アナウンスを復号することで ZKP（Zero-Knowledge Proof）を生成し、`Verifier.teleport()` 経由で同額の zERC20 をミントできます。
+{% endhint %}
 
 ## ステップ1：Seed を導出する
 
@@ -119,7 +121,9 @@ const { transactionHash } = await submitPrivateSendTransfer({
 |-------|------|-------------|
 | `transactionHash` | `Hex` | 確認済みのトランザクションハッシュ |
 
-> **📃 Note：** `submitPrivateSendTransfer` を使わず、任意の EVM ライブラリで標準の ERC-20 `transfer(burnAddress, amount)` を直接呼び出しても構いません。
+{% hint style="info" %}
+`submitPrivateSendTransfer` を使わず、任意の EVM ライブラリで標準の ERC-20 `transfer(burnAddress, amount)` を直接呼び出しても構いません。
+{% endhint %}
 
 ### シグネチャ
 

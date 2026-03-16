@@ -9,9 +9,11 @@ description: zERC20 ウェブアプリの基本的な使い方
 
 [zERC20 フロントエンド](https://app.zerc20.io/) にアクセスしてください。
 
-> **💡 Hint：** テストトークンで試したい場合は、[Testnet フロントエンド](https://v2.testnet.app.zerc20.io/) を使ってください。
+{% hint style="info" %}
+Testnetで試したい場合：[zERC20 フロントエンド TESTNET](https://v2.testnet.app.zerc20.io/)
+{% endhint %}
 
-<div align="center"><img src="../../assets/frontend/dashboard-overview.png" alt="" width="80%" height="auto"></div>
+<div align="center"><img src="../../assets/frontend/dashboard-overview.png" alt="" width="70%" height="auto"></div>
 
 ## ステップ2：ウォレットを接続する
 
@@ -33,30 +35,34 @@ zERC20 トークンは、原資産トークンに1:1でバックされた ERC-20
 
 ### 方法A：トークンをWrapする
 
-Wrap とは、標準トークン（USDC、ETH など）を zERC20 トークンに1:1で変換することです。
+- Wrap とは、標準トークン（USDC、ETH など）を zERC20 トークンに1:1で変換することです。
 
 1. 「Wrap / Unwrap」ボタンをクリック
 2. 「WRAP」タブを選択
 3. Wrap するトークンを選択（USDC、ETH、BNB など）
 4. 金額を入力
 
-<div align="center"><img src="../../assets/frontend/wrap-modal-input.png" alt="" width="80%" height="auto"></div>
+<div align="center"><img src="../../assets/frontend/wrap-modal-input.png" alt="" width="70%" height="auto"></div>
 
 5. 「Wrap USDC to zUSDC」（または対応するトークン）をクリック
 6. ウォレットでトランザクションを承認
 7. 同量の zERC20 トークンを受け取り
 
-> **📃 Note：** チェーンの流動性が低い場合、流動性提供のボーナスとして Wrapリワードを受け取れる場合があります。詳細は [手数料とリワード](../fees-and-rewards.md) を参照してください。
+{% hint style="success" %}
+チェーンの流動性が低い場合、流動性提供のボーナスとして Wrapリワードを受け取れる場合があります。詳細は [手数料とリワード](../fees-and-rewards.md) を参照してください。
+{% endhint %}
 
-Wrap 完了後、残高が更新されます：
+- Wrap 完了後、残高が更新されます：
 
-<div align="center"><img src="../../assets/frontend/dashboard-after-wrap.png" alt="" width="80%" height="auto"></div>
+<div align="center"><img src="../../assets/frontend/dashboard-after-wrap.png" alt="" width="70%" height="auto"></div>
 
 ### 方法B：DEXで購入する
 
 Uniswap などの分散型取引所で zERC20 を直接購入できます。
 
-> **📃 Note：** 各チェーンのトークンアドレスは [コントラクトアドレス](../../reference/addresses.md) を参照してください。
+{% hint style="info" %}
+各チェーンのトークンアドレスは [コントラクトアドレス](../../reference/addresses.md) を参照してください。
+{% endhint %}
 
 ### zERC20 トークンをUnwrapする
 
@@ -72,7 +78,7 @@ zERC20 トークンを原資産トークンに戻す手順：
 
 「Chain (Current)」を選択すると、現在のチェーンで原資産トークンを受け取れます。
 
-<div align="center"><img src="../../assets/frontend/unwrap-same-chain.png" alt="" width="80%" height="auto"></div>
+<div align="center"><img src="../../assets/frontend/unwrap-same-chain.png" alt="" width="70%" height="auto"></div>
 
 **クロスチェーンUnwrap：**
 
@@ -84,11 +90,13 @@ zERC20 トークンを原資産トークンに戻す手順：
 
 例えば Arbitrum にいる場合に「Base」を選択すると、フローは **Arbitrum → Base → Arbitrum** となります。Unwrap は Base で行われますが、原資産トークンは Arbitrum で受け取れます。
 
-<div align="center"><img src="../../assets/frontend/unwrap-cross-chain.png" alt="" width="80%" height="auto"></div>
+<div align="center"><img src="../../assets/frontend/unwrap-cross-chain.png" alt="" width="70%" height="auto"></div>
 
 トランザクション確認前に手数料の内訳（Unwrap手数料・ブリッジ手数料・LayerZero手数料）が表示されます。
 
-> **💡 Hint：** 現在のチェーンの流動性が低くUnwrap手数料が高い場合、クロスチェーンUnwrapを使うと別チェーンの流動性にアクセスして手数料を抑えられます。フロントエンドに手数料比較が表示されるので、最適な方法を選べます。詳細は [手数料とリワード](../fees-and-rewards.md) を参照してください。
+{% hint style="success" %}
+クロスチェーンUnwrapを使用することで別チェーンの流動性にアクセスし手数料を抑えられる場合があります。詳細は [手数料とリワード](../fees-and-rewards.md) を参照してください。
+{% endhint %}
 
 ## ステップ4：プライベート転送を行う
 
