@@ -149,3 +149,5 @@ vite.config.ts.timestamp-*
 *docs-en/
 *vault*
 *vault/
+scripts*
+scripts/

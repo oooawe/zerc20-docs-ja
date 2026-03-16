@@ -1,11 +1,9 @@
 ---
 icon: hand-holding-star
-description: zERC20のWrap / Unwrap手数料とWrapリワードの仕組み
+description: Unwrap手数料とWrapリワードの仕組み
 ---
 
 # 手数料とリワード
-
-
 
 ## 概要
 
