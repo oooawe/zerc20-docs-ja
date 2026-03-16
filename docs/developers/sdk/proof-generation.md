@@ -1,6 +1,6 @@
 ---
-icon: toilet-paper-check
-description: SKD
+icon: shield-check
+description: SDK を使った ZKP 生成の手順
 ---
 
 # Proof 生成

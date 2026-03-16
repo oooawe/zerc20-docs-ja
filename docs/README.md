@@ -1,5 +1,6 @@
 ---
 icon: bookmark
+description: zERC20 の概要と各セクションへのナビゲーション
 ---
 
 # はじめに

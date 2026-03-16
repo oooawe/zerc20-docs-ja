@@ -1,6 +1,7 @@
 ---
 hidden: true
-icon: toilet-paper-check
+icon: coins
+description: サポートトークンの読み込みと管理
 ---
 
 # Token Registry

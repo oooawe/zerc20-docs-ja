@@ -1,6 +1,6 @@
 ---
-icon: toilet-paper-check
-description: SKD
+icon: inbox
+description: SDK を使ったプライベート転送の受け取り・Withdrawal の手順
 ---
 
 # 受け取り

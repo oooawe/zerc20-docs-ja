@@ -1,6 +1,6 @@
 ---
-icon: toilet-paper-check
-description: SDK
+icon: book-open
+description: zerc20-client-sdk の全エクスポートとパラメータ一覧
 ---
 
 # API リファレンス

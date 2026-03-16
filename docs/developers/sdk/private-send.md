@@ -1,5 +1,5 @@
 ---
-icon: toilet-paper-check
+icon: paper-plane
 description: SDK を使ったプライベート zERC20 転送（Private Transfer）の各ステップの詳細
 ---
 

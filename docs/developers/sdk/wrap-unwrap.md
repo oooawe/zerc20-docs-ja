@@ -1,5 +1,5 @@
 ---
-icon: toilet-paper-check
+icon: arrows-rotate
 description: SDK を使った Wrap / Unwrap の操作方法
 ---
 

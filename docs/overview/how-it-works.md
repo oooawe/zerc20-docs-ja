@@ -1,6 +1,6 @@
 ---
 icon: chart-network
-description: コントラクトアドレス一覧zERC20のプライベート転送（Private Transfer）の仕組みと、提供されるプライバシー保証について
+description: zERC20のプライベート転送（Private Transfer）の仕組みと、提供されるプライバシー保証について
 ---
 
 # zERC20 の仕組み

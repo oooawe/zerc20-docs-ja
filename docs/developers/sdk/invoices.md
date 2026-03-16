@@ -1,6 +1,6 @@
 ---
-icon: toilet-paper-check
-description: SDK
+icon: file-invoice
+description: Invoice の生成・取得・タイプ判定の実装方法
 ---
 
 # Invoice

@@ -1,5 +1,5 @@
 ---
-icon: toilet-paper-check
+icon: rocket
 description: zerc20-client-sdk を使って TypeScript アプリケーションからプライベート zERC20 転送（Private Transfer）を送信する方法
 ---
 
